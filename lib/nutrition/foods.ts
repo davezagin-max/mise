@@ -30,7 +30,7 @@ export const AISLE_LABELS: Record<Aisle | "other", string> = {
   condiments: "Oils, sauces and sweeteners",
   spices: "Dried herbs and spices",
   frozen: "Frozen",
-  other: "Not in nutrition data",
+  other: "Everything else",
 };
 
 export type Animal = "meat" | "fish" | "dairy" | "egg" | "honey";
@@ -39,7 +39,8 @@ export interface Food {
   id: string;
   name: string;
   aliases: string[];
-  aisle: Aisle;
+  /** Bundled foods have a real aisle; foods fetched from FoodData Central are "other". */
+  aisle: Aisle | "other";
   /** Per 100 g. */
   kcal: number;
   protein: number;
@@ -57,6 +58,13 @@ export interface Food {
   liquid?: boolean;
   /** FoodData Central description, used as the search query when refreshing. */
   fdc: string;
+  /** Written by `pnpm nutrition:refresh` once a row has been matched to an FDC food. */
+  fdcId?: number;
+  /**
+   * Set on foods fetched from FoodData Central at run time. They have macros
+   * but no piece weights, cup weight, shelf life or diet tag.
+   */
+  source?: "fdc";
 }
 
 export const FOODS = data.foods as unknown as Food[];

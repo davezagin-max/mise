@@ -14,7 +14,7 @@ import { PipelineError, callClaude, untrusted, type Msg } from "../claude";
 import { MODELS, ZERO_USAGE, addUsage, type Usage } from "../config";
 import { catalogText } from "../nutrition/catalog";
 import type { Prefs, Quantity } from "../types";
-import { LEFTOVER_DAYS } from "./schedule";
+import { FRESH_MINUTES, LEFTOVER_DAYS } from "./schedule";
 import { PROTEIN_TOLERANCE, checkPlan, needsRevision, type Issue, type PlanReport } from "./check";
 import { PlanWire, normalizePlan, type PlanData } from "./schema";
 
@@ -28,7 +28,7 @@ Input. The user message has a <pantry> block (a JSON list of what is on hand: na
 
 What to produce.
 - Seven days, numbered 1 to 7. Day 1 is today. Every day has exactly one breakfast, one lunch and one dinner.
-- Six to ten recipes in total, reused the way people really cook: a dinner becomes the next day's lunch, one or two breakfasts rotate through the week. A recipe eaten again within ${LEFTOVER_DAYS} days of being cooked counts as leftovers; later than that it is cooked again.
+- Six to ten recipes in total, reused the way people really cook: a dinner becomes the next day's lunch, one or two breakfasts rotate through the week. A recipe eaten again within ${LEFTOVER_DAYS} days of being cooked counts as leftovers; later than that it is cooked again. A recipe of ${FRESH_MINUTES} minutes or less is made fresh each time.
 - servings is the number of portions the ingredient list makes as written. The app scales it to the household.
 - Use what is on hand before buying. Cook the food that spoils fastest first: raw meat and fish on day 1 or 2, then leafy greens, berries and soft herbs.
 - minutes is the total time from starting to eating. Never exceed the visitor's limit.

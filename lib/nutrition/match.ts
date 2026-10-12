@@ -114,14 +114,27 @@ export function aliasEntries(foods: Food[] = FOODS): { key: string; foodId: stri
   );
 }
 
+/**
+ * Foods looked up in FoodData Central for this visitor, by normalised name.
+ * Consulted only after the bundled table, so they can never shadow it.
+ */
+let extras = new Map<string, Food>();
+
+export function setExtraFoods(foods: Iterable<[string, Food]>): void {
+  extras = new Map([...foods].map(([name, food]) => [normalizeName(name), food]));
+}
+
 function lookup(name: string): Food | null {
   const key = normalizeName(name);
   if (!key) return null;
   const direct = INDEX.get(key);
   if (direct) return direct;
   const words = key.split(" ");
-  if (!words.includes("fresh")) return null;
-  return INDEX.get(words.filter((word) => word !== "fresh").join(" ")) ?? null;
+  if (words.includes("fresh")) {
+    const plain = INDEX.get(words.filter((word) => word !== "fresh").join(" "));
+    if (plain) return plain;
+  }
+  return extras.get(key) ?? null;
 }
 
 /** The food this name refers to, or null when the data does not have it. */

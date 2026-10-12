@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { checkPlan, needsRevision, pantryFoods } from "@/lib/plan/check";
-import { cookEvents, mealCount, portionsFor } from "@/lib/plan/schedule";
+import { cookEvents, describeEvents, mealCount, portionsFor } from "@/lib/plan/schedule";
 import { recipeNutrition } from "@/lib/nutrition/macros";
 import { plan, prefs, recipe, week } from "./helpers";
 
@@ -66,6 +66,42 @@ describe("cookEvents", () => {
     ]);
     expect(mealCount(p, "chicken")).toBe(14);
     expect(mealCount(p, "nope")).toBe(0);
+  });
+
+  it("makes a quick recipe fresh for every meal instead of treating it as leftovers", () => {
+    const quick = recipe("toast", { minutes: 10 });
+    const p = plan([quick, chicken], week("toast", "chicken", "chicken"));
+    const toast = cookEvents(p).filter((event) => event.recipeId === "toast");
+    expect(toast.map((event) => event.day)).toEqual([1, 2, 3, 4, 5, 6, 7]);
+    expect(toast.every((event) => event.meals.length === 1)).toBe(true);
+    // Fifteen minutes is the cut-off; sixteen is batch cooking.
+    const edge = plan(
+      [recipe("a", { minutes: 15 }), recipe("b", { minutes: 16 })],
+      week("a", "b", "b"),
+    );
+    expect(cookEvents(edge).filter((event) => event.recipeId === "a")).toHaveLength(7);
+    expect(
+      cookEvents(edge)
+        .filter((event) => event.recipeId === "b")
+        .map((event) => event.day),
+    ).toEqual([1, 5]);
+  });
+
+  it("describes cook days in one line", () => {
+    const p = plan([oats, chicken, salad], [
+      ["oats", "salad", "chicken"],
+      ["oats", "chicken", "salad"],
+      ["oats", "salad", "salad"],
+      ["oats", "salad", "salad"],
+      ["oats", "salad", "salad"],
+      ["oats", "salad", "chicken"],
+      ["oats", "salad", "salad"],
+    ]);
+    const of = (id: string) => cookEvents(p).filter((event) => event.recipeId === id);
+    expect(describeEvents(of("chicken"))).toBe("Cook on day 1, eat through day 2. Cook on day 6");
+    // The salad takes 10 minutes, so it is made on each of its days.
+    expect(describeEvents(of("salad"))).toBe("Made fresh on days 1, 2, 3, 4, 5, 6 and 7");
+    expect(describeEvents([])).toBe("");
   });
 
   it("makes one portion per person per meal unless overridden", () => {

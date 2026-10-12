@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode, type RefObject } from "react";
 import { CostMeter } from "@/components/kit/CostMeter";
 import { sourceLabel, sourceNote } from "@/lib/labels";
-import type { Macros } from "@/lib/nutrition/macros";
+import { ZERO_MACROS, addMacros, scaleMacros, type Macros } from "@/lib/nutrition/macros";
 import { pantryFoods, type PlanReport } from "@/lib/plan/check";
 import { cookEvents, portionsFor } from "@/lib/plan/schedule";
 import type { CheckLine } from "@/lib/plan/summary";
@@ -191,6 +191,13 @@ export function WeekStep({
     ...report.days.map((day) => day.macros.protein * 1.04),
   );
   const stale = planIsStale(session);
+  const average =
+    report.days.length > 0
+      ? scaleMacros(
+          report.days.reduce((sum, day) => addMacros(sum, day.macros), ZERO_MACROS),
+          1 / report.days.length,
+        )
+      : null;
 
   return (
     <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:gap-10">
@@ -349,6 +356,21 @@ export function WeekStep({
                 </li>
               );
             })}
+            {average && (
+              <li className="flex min-w-0 flex-col gap-3 rounded-lg border border-dashed border-border p-4">
+                <h3 className="font-display text-xl leading-none">An average day</h3>
+                <p className="text-sm">
+                  <span className="num text-lg font-semibold">{whole(average.protein)}</span>{" "}
+                  <span className="text-muted">g protein per person</span>
+                </p>
+                <EnergySplit macros={average} />
+                <p className="text-xs text-muted">
+                  The mean of the seven days above. Each day is one serving of each of its three
+                  meals, added up from{" "}
+                  <span className="num">{report.coverage.counted}</span> ingredient lines.
+                </p>
+              </li>
+            )}
           </ol>
         </section>
 

@@ -2,6 +2,58 @@
   "port": 3280,
   "shots": [
     {
+      "name": "hero",
+      "path": "/",
+      "theme": "light",
+      "viewport": "desktop",
+      "actions": [
+        {
+          "click": "text=The weeknight fridge"
+        },
+        {
+          "waitFor": "text=Is this what you have?"
+        },
+        {
+          "click": "text=Plan my week"
+        },
+        {
+          "waitFor": "text=Checked by code"
+        },
+        {
+          "scroll": 232
+        },
+        {
+          "wait": 500
+        }
+      ]
+    },
+    {
+      "name": "hero-dark",
+      "path": "/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "actions": [
+        {
+          "click": "text=The vegetarian fridge"
+        },
+        {
+          "waitFor": "text=Is this what you have?"
+        },
+        {
+          "click": "text=Plan my week"
+        },
+        {
+          "waitFor": "text=Checked by code"
+        },
+        {
+          "scroll": 232
+        },
+        {
+          "wait": 500
+        }
+      ]
+    },
+    {
       "name": "first",
       "path": "/",
       "theme": "light",
@@ -13,35 +65,15 @@
       "theme": "light",
       "viewport": "desktop",
       "actions": [
-        { "click": "text=The weeknight fridge" },
-        { "waitFor": "text=Is this what you have?" },
-        { "wait": 300 }
-      ]
-    },
-    {
-      "name": "hero",
-      "path": "/",
-      "theme": "light",
-      "viewport": "desktop",
-      "actions": [
-        { "click": "text=The weeknight fridge" },
-        { "waitFor": "text=Is this what you have?" },
-        { "click": "text=Plan my week" },
-        { "waitFor": "text=Checked by code" },
-        { "wait": 400 }
-      ]
-    },
-    {
-      "name": "hero-dark",
-      "path": "/",
-      "theme": "dark",
-      "viewport": "desktop",
-      "actions": [
-        { "click": "text=The vegetarian fridge" },
-        { "waitFor": "text=Is this what you have?" },
-        { "click": "text=Plan my week" },
-        { "waitFor": "text=Checked by code" },
-        { "wait": 400 }
+        {
+          "click": "text=The weeknight fridge"
+        },
+        {
+          "waitFor": "text=Is this what you have?"
+        },
+        {
+          "wait": 400
+        }
       ]
     },
     {
@@ -50,30 +82,33 @@
       "theme": "light",
       "viewport": "desktop",
       "actions": [
-        { "click": "text=The vegetarian fridge" },
-        { "waitFor": "text=Is this what you have?" },
-        { "click": "text=Plan my week" },
-        { "waitFor": "text=Checked by code" },
-        { "click": "text=Open the grocery list" },
-        { "waitFor": "text=in the basket" },
-        { "wait": 300 }
-      ]
-    },
-    {
-      "name": "mobile-first",
-      "path": "/",
-      "theme": "light",
-      "viewport": "mobile"
-    },
-    {
-      "name": "mobile-confirm",
-      "path": "/",
-      "theme": "light",
-      "viewport": "mobile",
-      "actions": [
-        { "click": "text=The high-protein fridge" },
-        { "waitFor": "text=Is this what you have?" },
-        { "wait": 300 }
+        {
+          "click": "text=The high-protein fridge"
+        },
+        {
+          "waitFor": "text=Is this what you have?"
+        },
+        {
+          "click": "text=Plan my week"
+        },
+        {
+          "waitFor": "text=Checked by code"
+        },
+        {
+          "click": "text=Open the grocery list"
+        },
+        {
+          "waitFor": "text=in the basket"
+        },
+        {
+          "click": "main input[type=checkbox] >> nth=0"
+        },
+        {
+          "click": "main input[type=checkbox] >> nth=1"
+        },
+        {
+          "wait": 400
+        }
       ]
     },
     {
@@ -82,12 +117,169 @@
       "theme": "light",
       "viewport": "mobile",
       "actions": [
-        { "click": "text=The high-protein fridge" },
-        { "waitFor": "text=Is this what you have?" },
-        { "click": "text=Plan my week" },
-        { "waitFor": "text=Checked by code" },
-        { "wait": 400 }
+        {
+          "click": "text=The high-protein fridge"
+        },
+        {
+          "waitFor": "text=Is this what you have?"
+        },
+        {
+          "click": "text=Plan my week"
+        },
+        {
+          "waitFor": "text=Checked by code"
+        },
+        {
+          "scroll": 690
+        },
+        {
+          "wait": 500
+        }
+      ]
+    },
+    {
+      "name": "mobile-first",
+      "path": "/",
+      "theme": "dark",
+      "viewport": "mobile"
+    },
+    {
+      "name": "mobile-recipe",
+      "path": "/",
+      "theme": "light",
+      "viewport": "mobile",
+      "actions": [
+        {
+          "click": "text=The weeknight fridge"
+        },
+        {
+          "waitFor": "text=Is this what you have?"
+        },
+        {
+          "click": "text=Plan my week"
+        },
+        {
+          "waitFor": "text=Checked by code"
+        },
+        {
+          "click": "text=Lemon-garlic chicken with broccoli and rice"
+        },
+        {
+          "waitFor": "text=Portions to make"
+        },
+        {
+          "wait": 400
+        }
       ]
     }
-  ]
+  ],
+  "gif": {
+    "path": "/",
+    "theme": "light",
+    "viewport": "desktop",
+    "actions": [
+      {
+        "wait": 900
+      },
+      {
+        "click": "text=The weeknight fridge"
+      },
+      {
+        "waitFor": "text=Is this what you have?"
+      },
+      {
+        "wait": 1500
+      },
+      {
+        "scroll": 500
+      },
+      {
+        "wait": 1100
+      },
+      {
+        "click": "text=Plan my week"
+      },
+      {
+        "waitFor": "text=Checked by code"
+      },
+      {
+        "wait": 1400
+      },
+      {
+        "scroll": 240
+      },
+      {
+        "wait": 1500
+      },
+      {
+        "click": "text=Turkey and black bean tacos with peppers"
+      },
+      {
+        "wait": 1300
+      },
+      {
+        "click": "button[aria-label^='More: Portions']"
+      },
+      {
+        "wait": 500
+      },
+      {
+        "click": "button[aria-label^='More: Portions']"
+      },
+      {
+        "wait": 1300
+      },
+      {
+        "click": "button[aria-label^='More: Protein target'] >> nth=0"
+      },
+      {
+        "wait": 250
+      },
+      {
+        "click": "button[aria-label^='More: Protein target'] >> nth=0"
+      },
+      {
+        "wait": 250
+      },
+      {
+        "click": "button[aria-label^='More: Protein target'] >> nth=0"
+      },
+      {
+        "wait": 250
+      },
+      {
+        "click": "button[aria-label^='More: Protein target'] >> nth=0"
+      },
+      {
+        "wait": 1500
+      },
+      {
+        "click": "nav >> text=Groceries"
+      },
+      {
+        "waitFor": "text=in the basket"
+      },
+      {
+        "wait": 1200
+      },
+      {
+        "click": "main input[type=checkbox] >> nth=0"
+      },
+      {
+        "wait": 350
+      },
+      {
+        "click": "main input[type=checkbox] >> nth=1"
+      },
+      {
+        "wait": 350
+      },
+      {
+        "click": "main input[type=checkbox] >> nth=2"
+      },
+      {
+        "wait": 1500
+      }
+    ]
+  }
 }

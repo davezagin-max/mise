@@ -226,7 +226,9 @@ function dietIssues(
   if (forbidden.length === 0) return { errors, warnings };
   recipe.ingredients.forEach((ingredient, index) => {
     const line = nutrition.lines[index];
-    if (line.status !== "unmatched") {
+    // A food fetched from FoodData Central has macros but no diet tag, so it is
+    // treated like an unknown ingredient here: checked by name, warned about, never passed.
+    if (line.status !== "unmatched" && line.food.source !== "fdc") {
       const animal = line.food.animal;
       if (animal && forbidden.includes(animal)) {
         errors.push({
@@ -243,7 +245,7 @@ function dietIssues(
       warnings.push({
         code: "diet-unverified",
         recipeId: recipe.id,
-        message: `"${recipe.title}" lists "${ingredient.name}", which is not in the nutrition data and may contain ${ANIMAL_TEXT[hit]}. Check it against your ${diet} diet.`,
+        message: `"${recipe.title}" lists "${ingredient.name}", which is not in the bundled nutrition data and may contain ${ANIMAL_TEXT[hit]}. Check it against your ${diet} diet.`,
       });
     }
   });

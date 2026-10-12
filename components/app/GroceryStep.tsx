@@ -24,12 +24,14 @@ function ItemRow({
           onChange={(event) => onToggle(event.target.checked)}
           className="mt-0.5 size-5 accent-(--accent)"
         />
-        <span className={`min-w-0 ${checked ? "text-muted line-through" : ""}`}>
-          <span className="font-medium">{item.name}</span>
+        <span className="min-w-0">
+          <span className={`font-medium ${checked ? "text-muted line-through" : ""}`}>
+            {item.name}
+          </span>
           {item.detail && <span className="block text-xs text-muted">{item.detail}</span>}
           {item.note && (
             <span
-              className={`mt-0.5 flex items-start gap-1 text-xs no-underline ${later ? "text-warn" : "text-muted"}`}
+              className={`mt-0.5 flex items-start gap-1 text-xs ${later && !checked ? "text-warn" : "text-muted"}`}
             >
               {later && <AlertIcon width={14} height={14} className="mt-px shrink-0" />}
               {item.note}

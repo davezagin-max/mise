@@ -6,6 +6,7 @@ import type { ErrorKind } from "@/lib/api";
 import { callApi } from "@/lib/client";
 import { buildGroceryList } from "@/lib/grocery";
 import { preparePhoto } from "@/lib/image-client";
+import { NutritionResponse, extraStore } from "@/lib/nutrition/extra";
 import { checkPlan } from "@/lib/plan/check";
 import type { PlanData } from "@/lib/plan/schema";
 import { summarizeChecks } from "@/lib/plan/summary";
@@ -81,6 +82,27 @@ function FailureNotice({
   );
 }
 
+/**
+ * Asks the server to look up ingredients the bundled table does not have.
+ * Optional by design: without a FoodData Central key on the server, or on any
+ * failure, those ingredients simply stay marked "not in the nutrition data".
+ */
+async function lookUpMissing(names: string[]): Promise<void> {
+  if (names.length === 0) return;
+  try {
+    const response = await fetch("/api/nutrition", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ names: names.slice(0, 20) }),
+    });
+    if (!response.ok) return;
+    const parsed = NutritionResponse.safeParse(await response.json());
+    if (parsed.success && parsed.data.available) extraStore.add(parsed.data.foods);
+  } catch {
+    // Offline or blocked: nothing to add.
+  }
+}
+
 /** Demo replies are instant; a short beat makes the change of screen readable. */
 const pause = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -89,6 +111,12 @@ export function MiseApp({ flags }: { flags: SampleFlags }) {
     sessionStore.subscribe,
     sessionStore.getSnapshot,
     sessionStore.getServerSnapshot,
+  );
+  // Changes when a FoodData Central lookup adds a food, so every figure is recomputed.
+  const extras = useSyncExternalStore(
+    extraStore.subscribe,
+    extraStore.getSnapshot,
+    extraStore.getServerSnapshot,
   );
   const { apiKey, isLive, openKeyModal } = useKey();
   const [loading, setLoading] = useState<SampleId | "photo" | "plan" | null>(null);
@@ -119,22 +147,21 @@ export function MiseApp({ flags }: { flags: SampleFlags }) {
     heading.current?.focus({ preventScroll: true });
   }, [step]);
 
-  const report = useMemo(
-    () => (session.plan ? checkPlan(session.plan.plan, session.prefs, session.items) : null),
-    [session.plan, session.prefs, session.items],
-  );
+  const report = useMemo(() => {
+    void extras;
+    return session.plan ? checkPlan(session.plan.plan, session.prefs, session.items) : null;
+  }, [session.plan, session.prefs, session.items, extras]);
   const checks = useMemo(
     () =>
       session.plan && report ? summarizeChecks(session.plan.plan, report, session.prefs) : [],
     [session.plan, report, session.prefs],
   );
-  const groceries = useMemo(
-    () =>
-      session.plan
-        ? buildGroceryList(session.plan.plan, session.prefs, session.items, session.portions)
-        : null,
-    [session.plan, session.prefs, session.items, session.portions],
-  );
+  const groceries = useMemo(() => {
+    void extras;
+    return session.plan
+      ? buildGroceryList(session.plan.plan, session.prefs, session.items, session.portions)
+      : null;
+  }, [session.plan, session.prefs, session.items, session.portions, extras]);
 
   function begin(what: SampleId | "photo" | "plan"): AbortController {
     request.current?.abort();
@@ -232,6 +259,8 @@ export function MiseApp({ flags }: { flags: SampleFlags }) {
       return;
     }
     sessionStore.dispatch({ type: "planned", data: response.data, meta: response.meta });
+    const { coverage } = checkPlan(response.data.plan, session.prefs, session.items);
+    void lookUpMissing(coverage.missing);
   }
 
   const go = (next: Step) => {
@@ -243,7 +272,7 @@ export function MiseApp({ flags }: { flags: SampleFlags }) {
 
   return (
     <>
-      <nav aria-label="Steps" className="sticky top-0 z-30 border-b border-border bg-bg/95 backdrop-blur">
+      <nav aria-label="Steps" className="sticky top-0 z-30 border-b border-border bg-bg">
         <ol className="mx-auto grid w-full max-w-6xl grid-cols-4 px-2 sm:px-4">
           {STEPS.map((name) => {
             const current = name === step;

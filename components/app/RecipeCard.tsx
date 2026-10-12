@@ -2,7 +2,7 @@
 
 import type { RefObject } from "react";
 import { recipeNutrition, scaleRecipe, type Macros } from "@/lib/nutrition/macros";
-import type { CookEvent } from "@/lib/plan/schedule";
+import { describeEvents, type CookEvent } from "@/lib/plan/schedule";
 import type { Recipe } from "@/lib/types";
 import { FAILURE_TEXT, formatAmount, formatGrams } from "@/lib/units";
 import { BackIcon, ClockIcon, Stepper, Tag, button } from "./ui";
@@ -52,9 +52,7 @@ function NutritionPanel({
         <FactRow label="Fat" value={`${whole(perServing.fat)} g`} />
       </dl>
       <p className="mt-2 text-xs text-muted">
-        Whole batch of <span className="num">{portions}</span>:{" "}
-        <span className="num">{whole(batch.kcal)}</span> kcal,{" "}
-        <span className="num">{whole(batch.protein)}</span> g protein.{" "}
+        Whole batch of {portions}: {whole(batch.kcal)} kcal, {whole(batch.protein)} g protein.{" "}
         {counted === total
           ? `All ${total} ingredients counted.`
           : `${counted} of ${total} ingredients counted, so the real figures are a little higher.`}
@@ -116,14 +114,7 @@ export function RecipeCard({
             <ClockIcon />
             <span className="num">{recipe.minutes}</span> min
           </span>
-          <span>
-            {events
-              .map(
-                (event) =>
-                  `Cook on day ${event.day}${event.meals.length > 1 ? `, eat through day ${event.meals.at(-1)?.day}` : ""}`,
-              )
-              .join(". ")}
-          </span>
+          <span>{describeEvents(events)}</span>
         </p>
         {recipe.why && <p className="text-sm">{recipe.why}</p>}
       </header>
@@ -154,6 +145,14 @@ export function RecipeCard({
           onChange={onPortions}
         />
       </div>
+
+      <NutritionPanel
+        perServing={facts.perServing}
+        batch={facts.total}
+        portions={portions}
+        counted={facts.counted}
+        total={facts.lines.length}
+      />
 
       <section aria-label="Ingredients">
         <h3 className="border-b-2 border-fg pb-1 font-display text-lg">Ingredients</h3>
@@ -194,14 +193,6 @@ export function RecipeCard({
           })}
         </ul>
       </section>
-
-      <NutritionPanel
-        perServing={facts.perServing}
-        batch={facts.total}
-        portions={portions}
-        counted={facts.counted}
-        total={facts.lines.length}
-      />
 
       <section aria-label="Method">
         <h3 className="border-b-2 border-fg pb-1 font-display text-lg">Method</h3>

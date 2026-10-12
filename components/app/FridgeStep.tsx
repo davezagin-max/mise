@@ -76,7 +76,9 @@ export function FridgeStep({
             <h2 id="samples-title" className="text-sm font-semibold">
               Tap a sample fridge to try it
             </h2>
-            <p className="text-xs text-muted">No key, no typing</p>
+            <p className="text-xs text-muted">
+              {isLive ? "Each tap is a live run on your key" : "No key, no typing"}
+            </p>
           </div>
           <ul className="grid grid-cols-3 gap-2 sm:gap-4">
             {SAMPLES.map((sample) => {

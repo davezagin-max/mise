@@ -498,7 +498,10 @@ export function ConfirmStep({
               <ItemForm
                 initial={{ name: "", quantity: 1, unit: "each" }}
                 submitLabel="Add to the list"
-                onSubmit={onAdd}
+                onSubmit={(item) => {
+                  onAdd(item);
+                  setAdding(false);
+                }}
                 onCancel={() => setAdding(false)}
               />
             </div>
@@ -523,11 +526,15 @@ export function ConfirmStep({
 
         <div className="lg:hidden">{source}</div>
 
-        {notice}
-
-        {/* Pinned to the bottom of the screen at every size, so the next step never needs a scroll. */}
-        <div className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-bg/95 px-4 py-3 backdrop-blur">
-          <div className="mx-auto w-full max-w-6xl">{cta}</div>
+        {/*
+          Pinned to the bottom of the screen at every size, so the next step never needs a scroll.
+          A failed plan is reported here too, next to the button that was pressed.
+        */}
+        <div className="fixed inset-x-0 bottom-0 z-20 max-h-[70dvh] overflow-y-auto border-t border-border bg-bg px-4 py-3">
+          <div className="mx-auto flex w-full max-w-6xl flex-col gap-3">
+            {notice}
+            {cta}
+          </div>
         </div>
       </div>
     </div>

@@ -9,8 +9,12 @@ describe("bundled nutrition data", () => {
     expect(FOODS.length).toBeGreaterThanOrEqual(250);
     expect(FOODS.length).toBeLessThanOrEqual(350);
     expect(NUTRITION_META.reference).toContain("FoodData Central");
-    expect(NUTRITION_META.provenance).toContain("NOT pulled from the FDC API");
-    expect(NUTRITION_META.verifiedAgainstFdc).toBe(false);
+    // Whatever state the table is in (hand-entered, or refreshed from FDC), it must say so.
+    expect(NUTRITION_META.provenance.toLowerCase()).toContain("hand-entered");
+    expect(typeof NUTRITION_META.verifiedAgainstFdc).toBe("boolean");
+    if (!NUTRITION_META.verifiedAgainstFdc) {
+      expect(NUTRITION_META.provenance).toMatch(/NOT pulled from the FDC API|keep their hand-entered/);
+    }
   });
 
   it("has unique ids and a valid aisle on every row", () => {
