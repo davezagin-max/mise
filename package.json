@@ -12,8 +12,10 @@
     "format": "prettier --write .",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
     "smoke": "vitest run tests/kit/smoke.live.test.ts",
-    "record": "node scripts/record.mjs",
-    "screenshots": "node scripts/screenshot.mjs"
+    "record": "node scripts/record.mjs --only /api/scan && node scripts/sync-presets.mjs && node scripts/record.mjs --only /api/plan",
+    "screenshots": "node scripts/screenshot.mjs",
+    "presets": "node scripts/sync-presets.mjs",
+    "samples": "node scripts/make-samples.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

@@ -1,0 +1,909 @@
+{
+  "note": "A fixed plan and pantry owned by the tests. Not a fixture: recording real runs never changes it.",
+  "pantry": [
+    {
+      "name": "chicken breast",
+      "quantity": 680,
+      "unit": "g"
+    },
+    {
+      "name": "ground turkey",
+      "quantity": 450,
+      "unit": "g"
+    },
+    {
+      "name": "eggs",
+      "quantity": 10,
+      "unit": "each"
+    },
+    {
+      "name": "milk",
+      "quantity": 6,
+      "unit": "cup"
+    },
+    {
+      "name": "greek yogurt",
+      "quantity": 900,
+      "unit": "g"
+    },
+    {
+      "name": "cheddar cheese",
+      "quantity": 225,
+      "unit": "g"
+    },
+    {
+      "name": "spinach",
+      "quantity": 140,
+      "unit": "g"
+    },
+    {
+      "name": "broccoli",
+      "quantity": 1,
+      "unit": "head"
+    },
+    {
+      "name": "bell pepper",
+      "quantity": 2,
+      "unit": "each"
+    },
+    {
+      "name": "cherry tomatoes",
+      "quantity": 280,
+      "unit": "g"
+    },
+    {
+      "name": "carrot",
+      "quantity": 5,
+      "unit": "each"
+    },
+    {
+      "name": "zucchini",
+      "quantity": 1,
+      "unit": "each"
+    },
+    {
+      "name": "lemon",
+      "quantity": 2,
+      "unit": "each"
+    },
+    {
+      "name": "avocado",
+      "quantity": 2,
+      "unit": "each"
+    },
+    {
+      "name": "flour tortillas",
+      "quantity": 8,
+      "unit": "each"
+    },
+    {
+      "name": "cooked white rice",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "name": "salsa",
+      "quantity": 1,
+      "unit": "jar"
+    },
+    {
+      "name": "butter",
+      "quantity": 1,
+      "unit": "stick"
+    }
+  ],
+  "plan": {
+    "title": "Chicken first, then tacos",
+    "summary": "Raw chicken and turkey are cooked on days 1 and 2. Each dinner makes the next day's lunch, and two breakfasts take turns.",
+    "recipes": [
+      {
+        "id": "yogurt-oat-bowls",
+        "title": "Yogurt and oat bowls with banana and almonds",
+        "minutes": 5,
+        "servings": 2,
+        "ingredients": [
+          {
+            "name": "greek yogurt",
+            "quantity": 400,
+            "unit": "g",
+            "prep": ""
+          },
+          {
+            "name": "rolled oats",
+            "quantity": 80,
+            "unit": "g",
+            "prep": ""
+          },
+          {
+            "name": "milk",
+            "quantity": 1,
+            "unit": "cup",
+            "prep": ""
+          },
+          {
+            "name": "banana",
+            "quantity": 1,
+            "unit": "each",
+            "prep": "sliced"
+          },
+          {
+            "name": "almonds",
+            "quantity": 40,
+            "unit": "g",
+            "prep": "roughly chopped"
+          },
+          {
+            "name": "chia seeds",
+            "quantity": 2,
+            "unit": "tbsp",
+            "prep": ""
+          },
+          {
+            "name": "honey",
+            "quantity": 2,
+            "unit": "tsp",
+            "prep": ""
+          }
+        ],
+        "steps": [
+          "Stir the oats into the milk and yogurt and leave for five minutes, or overnight in the fridge.",
+          "Divide between two bowls.",
+          "Top with the banana, almonds and chia seeds, then drizzle with honey."
+        ],
+        "why": "Uses the open milk and the big tub of yogurt for a breakfast that needs no cooking."
+      },
+      {
+        "id": "spinach-cheddar-scramble",
+        "title": "Spinach and cheddar scramble in tortillas",
+        "minutes": 10,
+        "servings": 2,
+        "ingredients": [
+          {
+            "name": "eggs",
+            "quantity": 6,
+            "unit": "each",
+            "prep": "beaten"
+          },
+          {
+            "name": "spinach",
+            "quantity": 2,
+            "unit": "cup",
+            "prep": ""
+          },
+          {
+            "name": "cheddar cheese",
+            "quantity": 60,
+            "unit": "g",
+            "prep": "grated"
+          },
+          {
+            "name": "flour tortillas",
+            "quantity": 2,
+            "unit": "each",
+            "prep": "warmed"
+          },
+          {
+            "name": "butter",
+            "quantity": 2,
+            "unit": "tsp",
+            "prep": ""
+          },
+          {
+            "name": "salsa",
+            "quantity": 4,
+            "unit": "tbsp",
+            "prep": ""
+          }
+        ],
+        "steps": [
+          "Melt the butter in a non-stick pan over medium heat and wilt the spinach for a minute.",
+          "Pour in the eggs and stir slowly until just set, then fold in the cheddar.",
+          "Spoon into the warm tortillas and top with salsa."
+        ],
+        "why": "Works through the eggs and spinach while both are fresh."
+      },
+      {
+        "id": "egg-avocado-wraps",
+        "title": "Egg, avocado and cheddar wraps",
+        "minutes": 10,
+        "servings": 2,
+        "ingredients": [
+          {
+            "name": "eggs",
+            "quantity": 4,
+            "unit": "each",
+            "prep": ""
+          },
+          {
+            "name": "flour tortillas",
+            "quantity": 2,
+            "unit": "each",
+            "prep": ""
+          },
+          {
+            "name": "avocado",
+            "quantity": 1,
+            "unit": "each",
+            "prep": "sliced"
+          },
+          {
+            "name": "cheddar cheese",
+            "quantity": 60,
+            "unit": "g",
+            "prep": "sliced"
+          },
+          {
+            "name": "spinach",
+            "quantity": 2,
+            "unit": "cup",
+            "prep": ""
+          },
+          {
+            "name": "greek yogurt",
+            "quantity": 150,
+            "unit": "g",
+            "prep": ""
+          },
+          {
+            "name": "lemon juice",
+            "quantity": 1,
+            "unit": "tbsp",
+            "prep": ""
+          },
+          {
+            "name": "hot sauce",
+            "quantity": 1,
+            "unit": "tsp",
+            "prep": ""
+          }
+        ],
+        "steps": [
+          "Boil the eggs for eight minutes, cool under cold water, peel and slice.",
+          "Stir the lemon juice and hot sauce into the yogurt.",
+          "Spread the yogurt over the tortillas, layer on spinach, egg, avocado and cheddar, and roll up."
+        ],
+        "why": "A first-day lunch from what is already open: one avocado, some spinach and the cheddar."
+      },
+      {
+        "id": "lemon-chicken-broccoli",
+        "title": "Lemon-garlic chicken with broccoli and rice",
+        "minutes": 25,
+        "servings": 4,
+        "ingredients": [
+          {
+            "name": "chicken breast",
+            "quantity": 680,
+            "unit": "g",
+            "prep": "cut into strips"
+          },
+          {
+            "name": "broccoli",
+            "quantity": 1,
+            "unit": "head",
+            "prep": "cut into florets"
+          },
+          {
+            "name": "carrot",
+            "quantity": 3,
+            "unit": "each",
+            "prep": "sliced thin"
+          },
+          {
+            "name": "cooked white rice",
+            "quantity": 2,
+            "unit": "cup",
+            "prep": ""
+          },
+          {
+            "name": "garlic",
+            "quantity": 3,
+            "unit": "clove",
+            "prep": "minced"
+          },
+          {
+            "name": "lemon",
+            "quantity": 1,
+            "unit": "each",
+            "prep": "juiced"
+          },
+          {
+            "name": "soy sauce",
+            "quantity": 1,
+            "unit": "tbsp",
+            "prep": ""
+          },
+          {
+            "name": "olive oil",
+            "quantity": 1,
+            "unit": "tbsp",
+            "prep": ""
+          },
+          {
+            "name": "salt",
+            "quantity": 0.5,
+            "unit": "tsp",
+            "prep": ""
+          },
+          {
+            "name": "black pepper",
+            "quantity": 0.5,
+            "unit": "tsp",
+            "prep": ""
+          }
+        ],
+        "steps": [
+          "Season the chicken with salt and pepper and brown it in the oil over high heat for five minutes.",
+          "Add the garlic, broccoli and carrots with a splash of water, cover and steam for five minutes.",
+          "Stir in the lemon juice and soy sauce and cook uncovered until the chicken is done.",
+          "Warm the rice and serve the chicken and vegetables over it."
+        ],
+        "why": "Cooks all the raw chicken on day one, with the broccoli and the leftover rice."
+      },
+      {
+        "id": "turkey-bean-tacos",
+        "title": "Turkey and black bean tacos with peppers",
+        "minutes": 25,
+        "servings": 4,
+        "ingredients": [
+          {
+            "name": "ground turkey",
+            "quantity": 450,
+            "unit": "g",
+            "prep": ""
+          },
+          {
+            "name": "black beans (canned, drained)",
+            "quantity": 1,
+            "unit": "can",
+            "prep": "rinsed"
+          },
+          {
+            "name": "bell pepper",
+            "quantity": 2,
+            "unit": "each",
+            "prep": "diced"
+          },
+          {
+            "name": "yellow onion",
+            "quantity": 1,
+            "unit": "each",
+            "prep": "diced"
+          },
+          {
+            "name": "salsa",
+            "quantity": 1,
+            "unit": "cup",
+            "prep": ""
+          },
+          {
+            "name": "cheddar cheese",
+            "quantity": 100,
+            "unit": "g",
+            "prep": "grated"
+          },
+          {
+            "name": "flour tortillas",
+            "quantity": 8,
+            "unit": "each",
+            "prep": "warmed"
+          },
+          {
+            "name": "avocado",
+            "quantity": 1,
+            "unit": "each",
+            "prep": "diced"
+          },
+          {
+            "name": "chili powder",
+            "quantity": 2,
+            "unit": "tsp",
+            "prep": ""
+          },
+          {
+            "name": "ground cumin",
+            "quantity": 1,
+            "unit": "tsp",
+            "prep": ""
+          },
+          {
+            "name": "olive oil",
+            "quantity": 1,
+            "unit": "tbsp",
+            "prep": ""
+          },
+          {
+            "name": "salt",
+            "quantity": 0.5,
+            "unit": "tsp",
+            "prep": ""
+          }
+        ],
+        "steps": [
+          "Soften the onion and peppers in the oil for five minutes.",
+          "Add the turkey, chili powder, cumin and salt and cook, breaking it up, until browned.",
+          "Stir in the beans and half the salsa and simmer for five minutes.",
+          "Fill the tortillas and top with cheddar, avocado and the rest of the salsa."
+        ],
+        "why": "Uses the ground turkey on day two, before it turns, along with both peppers and the second avocado."
+      },
+      {
+        "id": "salmon-zucchini-quinoa",
+        "title": "Roasted salmon with zucchini, tomatoes and quinoa",
+        "minutes": 30,
+        "servings": 4,
+        "ingredients": [
+          {
+            "name": "salmon fillet",
+            "quantity": 4,
+            "unit": "fillet",
+            "prep": ""
+          },
+          {
+            "name": "zucchini",
+            "quantity": 2,
+            "unit": "each",
+            "prep": "cut into half-moons"
+          },
+          {
+            "name": "cherry tomatoes",
+            "quantity": 280,
+            "unit": "g",
+            "prep": ""
+          },
+          {
+            "name": "quinoa (dry)",
+            "quantity": 1,
+            "unit": "cup",
+            "prep": "rinsed"
+          },
+          {
+            "name": "garlic",
+            "quantity": 2,
+            "unit": "clove",
+            "prep": "sliced"
+          },
+          {
+            "name": "lemon",
+            "quantity": 1,
+            "unit": "each",
+            "prep": "cut into wedges"
+          },
+          {
+            "name": "dried oregano",
+            "quantity": 1,
+            "unit": "tsp",
+            "prep": ""
+          },
+          {
+            "name": "olive oil",
+            "quantity": 1,
+            "unit": "tbsp",
+            "prep": ""
+          },
+          {
+            "name": "salt",
+            "quantity": 0.5,
+            "unit": "tsp",
+            "prep": ""
+          }
+        ],
+        "steps": [
+          "Heat the oven to 220 C (425 F). Simmer the quinoa in two cups of water for fifteen minutes.",
+          "Toss the zucchini, tomatoes and garlic with the oil, oregano and salt on a large tray.",
+          "Roast for ten minutes, add the salmon skin side down, and roast twelve minutes more.",
+          "Serve over the quinoa with lemon."
+        ],
+        "why": "Clears the zucchini and the cherry tomatoes; the salmon is the one fresh buy for midweek."
+      },
+      {
+        "id": "beef-broccoli-stir-fry",
+        "title": "Beef and broccoli stir-fry with rice",
+        "minutes": 25,
+        "servings": 4,
+        "ingredients": [
+          {
+            "name": "flank steak",
+            "quantity": 600,
+            "unit": "g",
+            "prep": "sliced thin across the grain"
+          },
+          {
+            "name": "broccoli",
+            "quantity": 1,
+            "unit": "head",
+            "prep": "cut into florets"
+          },
+          {
+            "name": "carrot",
+            "quantity": 2,
+            "unit": "each",
+            "prep": "sliced thin"
+          },
+          {
+            "name": "white rice (dry)",
+            "quantity": 1.25,
+            "unit": "cup",
+            "prep": ""
+          },
+          {
+            "name": "soy sauce",
+            "quantity": 3,
+            "unit": "tbsp",
+            "prep": ""
+          },
+          {
+            "name": "garlic",
+            "quantity": 3,
+            "unit": "clove",
+            "prep": "minced"
+          },
+          {
+            "name": "fresh ginger",
+            "quantity": 1,
+            "unit": "tbsp",
+            "prep": "grated"
+          },
+          {
+            "name": "cornstarch",
+            "quantity": 1,
+            "unit": "tbsp",
+            "prep": ""
+          },
+          {
+            "name": "sesame oil",
+            "quantity": 2,
+            "unit": "tsp",
+            "prep": ""
+          },
+          {
+            "name": "vegetable oil",
+            "quantity": 1,
+            "unit": "tbsp",
+            "prep": ""
+          }
+        ],
+        "steps": [
+          "Start the rice. Toss the beef with the cornstarch and one tablespoon of the soy sauce.",
+          "Sear the beef in the vegetable oil over high heat for two minutes, then set it aside.",
+          "Stir-fry the broccoli, carrots, garlic and ginger with a splash of water for four minutes.",
+          "Return the beef, add the remaining soy sauce and the sesame oil, and toss for a minute."
+        ],
+        "why": "Finishes the carrots and gives the week a fast dinner that reheats well."
+      },
+      {
+        "id": "turkey-meatball-pasta",
+        "title": "Turkey meatballs in marinara with whole wheat pasta",
+        "minutes": 30,
+        "servings": 4,
+        "ingredients": [
+          {
+            "name": "ground turkey",
+            "quantity": 500,
+            "unit": "g",
+            "prep": ""
+          },
+          {
+            "name": "eggs",
+            "quantity": 1,
+            "unit": "each",
+            "prep": ""
+          },
+          {
+            "name": "breadcrumbs",
+            "quantity": 40,
+            "unit": "g",
+            "prep": ""
+          },
+          {
+            "name": "parmesan",
+            "quantity": 40,
+            "unit": "g",
+            "prep": "grated"
+          },
+          {
+            "name": "marinara sauce",
+            "quantity": 1,
+            "unit": "jar",
+            "prep": ""
+          },
+          {
+            "name": "whole wheat pasta (dry)",
+            "quantity": 320,
+            "unit": "g",
+            "prep": ""
+          },
+          {
+            "name": "spinach",
+            "quantity": 2,
+            "unit": "cup",
+            "prep": ""
+          },
+          {
+            "name": "garlic",
+            "quantity": 2,
+            "unit": "clove",
+            "prep": "minced"
+          },
+          {
+            "name": "dried oregano",
+            "quantity": 1,
+            "unit": "tsp",
+            "prep": ""
+          }
+        ],
+        "steps": [
+          "Mix the turkey, egg, breadcrumbs, garlic, oregano and half the parmesan and roll into sixteen balls.",
+          "Brown the meatballs in a wide pan for five minutes, turning once.",
+          "Pour in the marinara, cover and simmer for twelve minutes while the pasta boils.",
+          "Stir the spinach into the sauce to wilt, then serve over the pasta with the rest of the parmesan."
+        ],
+        "why": "A second pack of turkey later in the week, with spinach stirred in to use up the bag."
+      },
+      {
+        "id": "chicken-thigh-couscous",
+        "title": "Skillet chicken thighs with carrots and couscous",
+        "minutes": 30,
+        "servings": 4,
+        "ingredients": [
+          {
+            "name": "chicken thigh",
+            "quantity": 700,
+            "unit": "g",
+            "prep": ""
+          },
+          {
+            "name": "carrot",
+            "quantity": 4,
+            "unit": "each",
+            "prep": "cut into coins"
+          },
+          {
+            "name": "couscous (dry)",
+            "quantity": 1,
+            "unit": "cup",
+            "prep": ""
+          },
+          {
+            "name": "chicken broth",
+            "quantity": 1.5,
+            "unit": "cup",
+            "prep": ""
+          },
+          {
+            "name": "yellow onion",
+            "quantity": 1,
+            "unit": "each",
+            "prep": "sliced"
+          },
+          {
+            "name": "garlic",
+            "quantity": 2,
+            "unit": "clove",
+            "prep": "minced"
+          },
+          {
+            "name": "lemon",
+            "quantity": 1,
+            "unit": "each",
+            "prep": "juiced"
+          },
+          {
+            "name": "parsley",
+            "quantity": 0.25,
+            "unit": "cup",
+            "prep": "chopped"
+          },
+          {
+            "name": "ground cumin",
+            "quantity": 1,
+            "unit": "tsp",
+            "prep": ""
+          },
+          {
+            "name": "paprika",
+            "quantity": 1,
+            "unit": "tsp",
+            "prep": ""
+          },
+          {
+            "name": "olive oil",
+            "quantity": 1,
+            "unit": "tbsp",
+            "prep": ""
+          }
+        ],
+        "steps": [
+          "Rub the chicken with cumin and paprika and brown it in the oil for four minutes a side.",
+          "Add the onion, carrots and garlic and cook for three minutes.",
+          "Pour in the broth, cover and simmer for ten minutes until the chicken is cooked through.",
+          "Stir in the couscous, cover, take off the heat for five minutes, then finish with lemon and parsley."
+        ],
+        "why": "One pan, and it makes Sunday's lunch as well."
+      },
+      {
+        "id": "sirloin-sweet-potato",
+        "title": "Seared sirloin with sweet potato and green beans",
+        "minutes": 30,
+        "servings": 2,
+        "ingredients": [
+          {
+            "name": "sirloin steak",
+            "quantity": 350,
+            "unit": "g",
+            "prep": ""
+          },
+          {
+            "name": "sweet potato",
+            "quantity": 2,
+            "unit": "each",
+            "prep": "cut into small cubes"
+          },
+          {
+            "name": "green beans",
+            "quantity": 250,
+            "unit": "g",
+            "prep": "trimmed"
+          },
+          {
+            "name": "butter",
+            "quantity": 1,
+            "unit": "tbsp",
+            "prep": ""
+          },
+          {
+            "name": "garlic",
+            "quantity": 2,
+            "unit": "clove",
+            "prep": "crushed"
+          },
+          {
+            "name": "olive oil",
+            "quantity": 2,
+            "unit": "tsp",
+            "prep": ""
+          },
+          {
+            "name": "salt",
+            "quantity": 0.5,
+            "unit": "tsp",
+            "prep": ""
+          },
+          {
+            "name": "black pepper",
+            "quantity": 0.5,
+            "unit": "tsp",
+            "prep": ""
+          }
+        ],
+        "steps": [
+          "Roast the sweet potato with the oil and half the salt at 220 C (425 F) for twenty-five minutes.",
+          "Boil the green beans for four minutes and drain.",
+          "Season the steak and sear it in a hot pan for three minutes a side, adding the butter and garlic at the end.",
+          "Rest the steak for five minutes, slice, and serve with the vegetables and the pan butter."
+        ],
+        "why": "A simple end to the week that needs nothing left over."
+      }
+    ],
+    "days": [
+      {
+        "day": 1,
+        "meals": [
+          {
+            "slot": "breakfast",
+            "recipeId": "yogurt-oat-bowls"
+          },
+          {
+            "slot": "lunch",
+            "recipeId": "egg-avocado-wraps"
+          },
+          {
+            "slot": "dinner",
+            "recipeId": "lemon-chicken-broccoli"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "meals": [
+          {
+            "slot": "breakfast",
+            "recipeId": "spinach-cheddar-scramble"
+          },
+          {
+            "slot": "lunch",
+            "recipeId": "lemon-chicken-broccoli"
+          },
+          {
+            "slot": "dinner",
+            "recipeId": "turkey-bean-tacos"
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "meals": [
+          {
+            "slot": "breakfast",
+            "recipeId": "yogurt-oat-bowls"
+          },
+          {
+            "slot": "lunch",
+            "recipeId": "turkey-bean-tacos"
+          },
+          {
+            "slot": "dinner",
+            "recipeId": "salmon-zucchini-quinoa"
+          }
+        ]
+      },
+      {
+        "day": 4,
+        "meals": [
+          {
+            "slot": "breakfast",
+            "recipeId": "spinach-cheddar-scramble"
+          },
+          {
+            "slot": "lunch",
+            "recipeId": "salmon-zucchini-quinoa"
+          },
+          {
+            "slot": "dinner",
+            "recipeId": "beef-broccoli-stir-fry"
+          }
+        ]
+      },
+      {
+        "day": 5,
+        "meals": [
+          {
+            "slot": "breakfast",
+            "recipeId": "yogurt-oat-bowls"
+          },
+          {
+            "slot": "lunch",
+            "recipeId": "beef-broccoli-stir-fry"
+          },
+          {
+            "slot": "dinner",
+            "recipeId": "turkey-meatball-pasta"
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "meals": [
+          {
+            "slot": "breakfast",
+            "recipeId": "spinach-cheddar-scramble"
+          },
+          {
+            "slot": "lunch",
+            "recipeId": "turkey-meatball-pasta"
+          },
+          {
+            "slot": "dinner",
+            "recipeId": "chicken-thigh-couscous"
+          }
+        ]
+      },
+      {
+        "day": 7,
+        "meals": [
+          {
+            "slot": "breakfast",
+            "recipeId": "yogurt-oat-bowls"
+          },
+          {
+            "slot": "lunch",
+            "recipeId": "chicken-thigh-couscous"
+          },
+          {
+            "slot": "dinner",
+            "recipeId": "sirloin-sweet-potato"
+          }
+        ]
+      }
+    ]
+  }
+}

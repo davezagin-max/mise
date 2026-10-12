@@ -2,9 +2,9 @@
 /**
  * Records real Claude runs for every preset in fixtures/presets.json.
  *
- *   pnpm record                 # all presets, stops at a $2 budget
- *   pnpm record --budget 0.50   # tighter cap
- *   pnpm record --only tessell  # presets whose route or demoId contains the text
+ *   pnpm record                                    # scans, then presets, then plans (see package.json)
+ *   node scripts/record.mjs --budget 0.50          # all presets with a tighter cap (default $2)
+ *   node scripts/record.mjs --only weeknight       # presets whose route or demoId contains the text
  *
  * Starts the dev server with RECORD_FIXTURES=1 and ALLOW_SERVER_KEY=1 so each
  * API route calls Claude with your key and writes its response into
@@ -19,7 +19,7 @@ const flag = (name) => {
   return i === -1 ? undefined : process.argv[i + 1];
 };
 const budget = Number(flag("--budget") ?? 2);
-const port = Number(flag("--port") ?? 3111);
+const port = Number(flag("--port") ?? 3180);
 const only = flag("--only");
 
 for (const file of [".env.local", "../.env"]) {

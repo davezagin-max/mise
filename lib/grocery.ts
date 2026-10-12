@@ -91,17 +91,45 @@ function ounces(grams: number): string {
   return `${Number(oz.toFixed(oz < 10 ? 1 : 0))} oz`;
 }
 
-/** How to say `grams` of a food on a shopping list. Exported for tests. */
-export function purchaseAmount(food: Food, grams: number): { amount: string; detail: string } {
+/** The count unit this food is bought by, or null when it is bought by weight or volume. */
+function purchaseUnit(food: Food): string | null {
   const pieces = food.units ?? {};
   // Bread and bacon are bought by the slice; cheese that happens to have a slice weight is not.
   const sliced = food.aisle === "bakery" || food.aisle === "meat";
-  const unit =
+  // Meat is bought by weight even though a chicken breast has a typical one.
+  const counted = food.aisle !== "meat" && pieces.each && pieces.each >= MIN_PIECE_GRAMS;
+  return (
     PURCHASE_UNITS.find((id) => pieces[id] && (id !== "slice" || sliced)) ??
-    (pieces.each && pieces.each >= MIN_PIECE_GRAMS ? "each" : null);
-  if (unit) {
+    (counted ? "each" : null)
+  );
+}
+
+function round(value: number, step: number): number {
+  return Math.round(value / step) * step;
+}
+
+/**
+ * `grams` of a food in the unit a cook thinks in, not rounded up: "23" eggs,
+ * "2¾ cans", "4 cups" of milk, "1½ tsp" of cumin, "450 g" of chicken.
+ */
+export function describeAmount(food: Food, grams: number): string {
+  const unit = purchaseUnit(food);
+  if (unit && food.units) return formatAmount(round(grams / food.units[unit], 0.25) || 0.25, unit);
+  if (food.cup && (food.liquid || food.staple)) {
+    const tsp = (grams / food.cup) * 48;
+    if (tsp < 3) return formatAmount(Math.max(round(tsp, 0.25), 0.25), "tsp");
+    if (tsp < 12) return formatAmount(round(tsp / 3, 0.5), "tbsp");
+    return formatAmount(round(tsp / 48, 0.25), "cup");
+  }
+  return formatGrams(grams);
+}
+
+/** How to say `grams` of a food on a shopping list, rounded up to what a shop sells. */
+export function purchaseAmount(food: Food, grams: number): { amount: string; detail: string } {
+  const unit = purchaseUnit(food);
+  if (unit && food.units) {
     // 3.02 onions is 3 onions; 3.2 is 4, because shops do not sell fifths.
-    const count = Math.max(1, Math.ceil(grams / pieces[unit] - 0.05));
+    const count = Math.max(1, Math.ceil(grams / food.units[unit] - 0.05));
     return { amount: formatAmount(count, unit), detail: `about ${formatGrams(grams)}` };
   }
   if (food.liquid && food.cup) {
@@ -202,7 +230,7 @@ export function buildGroceryList(
     };
     const needText =
       food && need.grams > 0
-        ? [formatGrams(need.grams), need.loose.size ? looseText(need.loose) : ""]
+        ? [describeAmount(food, need.grams), need.loose.size ? looseText(need.loose) : ""]
             .filter(Boolean)
             .join(" + ")
         : looseText(need.loose);
@@ -229,8 +257,8 @@ export function buildGroceryList(
         list.covered.push({
           ...base,
           status: "covered",
-          amount: formatGrams(need.grams),
-          detail: `have ${formatGrams(haveGrams)}`,
+          amount: describeAmount(food, need.grams),
+          detail: `have ${describeAmount(food, haveGrams)}`,
           buyGrams: null,
           note: null,
         });
@@ -243,7 +271,7 @@ export function buildGroceryList(
         amount: shown.amount,
         detail:
           haveGrams > 0
-            ? `${shown.detail}; need ${formatGrams(need.grams)}, have ${formatGrams(haveGrams)}`
+            ? `${shown.detail}; need ${describeAmount(food, need.grams)}, have ${describeAmount(food, haveGrams)}`
             : shown.detail,
         buyGrams: short,
         note: timingNote(food, need.lastDay),
@@ -273,7 +301,10 @@ export function buildGroceryList(
 
     // On hand, but the two amounts cannot be compared.
     if (have) {
-      const haveText = [have.grams > 0 ? formatGrams(have.grams) : "", looseText(have.loose)]
+      const haveText = [
+        food && have.grams > 0 ? describeAmount(food, have.grams) : "",
+        looseText(have.loose),
+      ]
         .filter(Boolean)
         .join(" + ");
       list.check.push({

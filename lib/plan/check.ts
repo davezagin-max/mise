@@ -251,7 +251,7 @@ function dietIssues(
 }
 
 function isDiet(value: string): value is Diet {
-  return (DIETS as string[]).includes(value);
+  return (DIETS as readonly string[]).includes(value);
 }
 
 /** The foods on hand, one entry per distinct food the data knows. */

@@ -1,0 +1,2489 @@
+{
+  "catch": {
+    "label": "catch",
+    "placeholder": true,
+    "recordedAt": null,
+    "model": "claude-opus-5-5",
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "costUsd": 0,
+    "data": {
+      "plan": {
+        "title": "Fresh fish first",
+        "summary": "Salmon on day 1 and shrimp on day 2, while they are fresh. Tins, tofu and eggs keep the protein up for the rest of the week.",
+        "recipes": [
+          {
+            "id": "cottage-cheese-bowl",
+            "title": "Cottage cheese bowl with blueberries and hemp seeds",
+            "minutes": 5,
+            "servings": 1,
+            "ingredients": [
+              {
+                "name": "cottage cheese",
+                "quantity": 225,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "greek yogurt",
+                "quantity": 100,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "rolled oats",
+                "quantity": 30,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "blueberries",
+                "quantity": 100,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "hemp seeds",
+                "quantity": 2,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "honey",
+                "quantity": 1,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Stir the oats into the yogurt.",
+              "Spoon the cottage cheese alongside and top with the blueberries and hemp seeds.",
+              "Drizzle with honey."
+            ],
+            "why": "A no-cook breakfast built on the cottage cheese."
+          },
+          {
+            "id": "smoked-salmon-toast",
+            "title": "Smoked salmon and egg toast",
+            "minutes": 10,
+            "servings": 1,
+            "ingredients": [
+              {
+                "name": "eggs",
+                "quantity": 2,
+                "unit": "each",
+                "prep": ""
+              },
+              {
+                "name": "smoked salmon",
+                "quantity": 60,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "whole wheat bread",
+                "quantity": 2,
+                "unit": "slice",
+                "prep": "toasted"
+              },
+              {
+                "name": "cottage cheese",
+                "quantity": 100,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "avocado",
+                "quantity": 0.5,
+                "unit": "each",
+                "prep": "sliced"
+              },
+              {
+                "name": "lemon juice",
+                "quantity": 1,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "black pepper",
+                "quantity": 1,
+                "unit": "pinch",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Soft-boil the eggs for six and a half minutes, cool and peel.",
+              "Spread the cottage cheese over the toast and layer on the avocado and smoked salmon.",
+              "Halve the eggs on top and finish with lemon juice and pepper."
+            ],
+            "why": "Uses the smoked salmon and an avocado half while they are good."
+          },
+          {
+            "id": "tuna-white-bean-salad",
+            "title": "Tuna and white bean salad",
+            "minutes": 10,
+            "servings": 1,
+            "ingredients": [
+              {
+                "name": "canned tuna in water",
+                "quantity": 1,
+                "unit": "can",
+                "prep": "drained"
+              },
+              {
+                "name": "white beans (canned, drained)",
+                "quantity": 0.5,
+                "unit": "can",
+                "prep": "rinsed"
+              },
+              {
+                "name": "eggs",
+                "quantity": 1,
+                "unit": "each",
+                "prep": ""
+              },
+              {
+                "name": "spinach",
+                "quantity": 2,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "cucumber",
+                "quantity": 0.5,
+                "unit": "each",
+                "prep": "diced"
+              },
+              {
+                "name": "cherry tomatoes",
+                "quantity": 100,
+                "unit": "g",
+                "prep": "halved"
+              },
+              {
+                "name": "red onion",
+                "quantity": 0.25,
+                "unit": "each",
+                "prep": "sliced thin"
+              },
+              {
+                "name": "olive oil",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "lemon juice",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Boil the egg for eight minutes, cool, peel and quarter.",
+              "Toss the beans, cucumber, tomatoes and onion with the oil and lemon juice.",
+              "Pile onto the spinach and top with the tuna and egg."
+            ],
+            "why": "A first-day lunch that starts on the spinach, cucumber and tomatoes."
+          },
+          {
+            "id": "salmon-asparagus-sweet-potato",
+            "title": "Roasted salmon with asparagus and sweet potato",
+            "minutes": 40,
+            "servings": 2,
+            "ingredients": [
+              {
+                "name": "salmon fillet",
+                "quantity": 2,
+                "unit": "fillet",
+                "prep": ""
+              },
+              {
+                "name": "asparagus",
+                "quantity": 1,
+                "unit": "bunch",
+                "prep": "ends snapped off"
+              },
+              {
+                "name": "sweet potato",
+                "quantity": 2,
+                "unit": "each",
+                "prep": "cut into wedges"
+              },
+              {
+                "name": "greek yogurt",
+                "quantity": 100,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "lemon",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "half juiced, half in wedges"
+              },
+              {
+                "name": "garlic",
+                "quantity": 2,
+                "unit": "clove",
+                "prep": "minced"
+              },
+              {
+                "name": "olive oil",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "salt",
+                "quantity": 0.5,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Heat the oven to 220 C (425 F). Roast the sweet potato with half the oil and salt for fifteen minutes.",
+              "Add the asparagus and salmon to the tray, drizzle with the remaining oil and roast twelve minutes more.",
+              "Stir the garlic and lemon juice into the yogurt.",
+              "Serve with the yogurt sauce and lemon wedges."
+            ],
+            "why": "Cooks both salmon fillets and the asparagus on day one, the two things that spoil fastest."
+          },
+          {
+            "id": "shrimp-tacos",
+            "title": "Shrimp and black bean tacos with lime crema",
+            "minutes": 25,
+            "servings": 2,
+            "ingredients": [
+              {
+                "name": "shrimp",
+                "quantity": 340,
+                "unit": "g",
+                "prep": "peeled"
+              },
+              {
+                "name": "corn tortillas",
+                "quantity": 6,
+                "unit": "each",
+                "prep": "warmed"
+              },
+              {
+                "name": "black beans (canned, drained)",
+                "quantity": 1,
+                "unit": "can",
+                "prep": "rinsed"
+              },
+              {
+                "name": "red cabbage",
+                "quantity": 2,
+                "unit": "cup",
+                "prep": "shredded"
+              },
+              {
+                "name": "avocado",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "sliced"
+              },
+              {
+                "name": "greek yogurt",
+                "quantity": 100,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "lime",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "juiced"
+              },
+              {
+                "name": "cilantro",
+                "quantity": 0.25,
+                "unit": "cup",
+                "prep": "chopped"
+              },
+              {
+                "name": "jalapeno",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "sliced thin"
+              },
+              {
+                "name": "chili powder",
+                "quantity": 1,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "ground cumin",
+                "quantity": 1,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "olive oil",
+                "quantity": 2,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Toss the shrimp with the chili powder and cumin and sear in the oil for two minutes a side.",
+              "Warm the beans in the same pan.",
+              "Stir half the lime juice into the yogurt and toss the cabbage with the rest.",
+              "Fill the tortillas with beans, shrimp, cabbage and avocado and top with crema, cilantro and jalapeno."
+            ],
+            "why": "All the shrimp on day two, with the cilantro, a jalapeno and the ripest avocado."
+          },
+          {
+            "id": "cod-white-beans",
+            "title": "Cod with tomatoes, olives and white beans",
+            "minutes": 25,
+            "servings": 2,
+            "ingredients": [
+              {
+                "name": "cod fillet",
+                "quantity": 2,
+                "unit": "fillet",
+                "prep": ""
+              },
+              {
+                "name": "white beans (canned, drained)",
+                "quantity": 1,
+                "unit": "can",
+                "prep": "rinsed"
+              },
+              {
+                "name": "cherry tomatoes",
+                "quantity": 180,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "spinach",
+                "quantity": 2,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "olives",
+                "quantity": 0.25,
+                "unit": "cup",
+                "prep": "halved"
+              },
+              {
+                "name": "garlic",
+                "quantity": 2,
+                "unit": "clove",
+                "prep": "sliced"
+              },
+              {
+                "name": "parsley",
+                "quantity": 2,
+                "unit": "tbsp",
+                "prep": "chopped"
+              },
+              {
+                "name": "lemon",
+                "quantity": 0.5,
+                "unit": "each",
+                "prep": ""
+              },
+              {
+                "name": "olive oil",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Warm the garlic in the oil, add the tomatoes and cook until they burst, about five minutes.",
+              "Stir in the beans, olives and spinach.",
+              "Nestle the cod into the pan, cover and cook for eight minutes until it flakes.",
+              "Finish with parsley and a squeeze of lemon."
+            ],
+            "why": "Finishes the cherry tomatoes and spinach; buy the cod on the day or keep it frozen."
+          },
+          {
+            "id": "tofu-edamame-fried-rice",
+            "title": "Tofu and edamame fried rice with egg",
+            "minutes": 25,
+            "servings": 2,
+            "ingredients": [
+              {
+                "name": "tofu (extra firm)",
+                "quantity": 1,
+                "unit": "block",
+                "prep": "pressed and cubed"
+              },
+              {
+                "name": "edamame (shelled)",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "eggs",
+                "quantity": 3,
+                "unit": "each",
+                "prep": "beaten"
+              },
+              {
+                "name": "white rice (dry)",
+                "quantity": 0.75,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "carrot",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "diced small"
+              },
+              {
+                "name": "green onions",
+                "quantity": 3,
+                "unit": "each",
+                "prep": "sliced"
+              },
+              {
+                "name": "soy sauce",
+                "quantity": 2,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "fresh ginger",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": "grated"
+              },
+              {
+                "name": "garlic",
+                "quantity": 2,
+                "unit": "clove",
+                "prep": "minced"
+              },
+              {
+                "name": "sesame oil",
+                "quantity": 2,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Cook the rice and spread it on a plate to cool for five minutes.",
+              "Brown the tofu in half the sesame oil and set aside. Scramble the eggs in the same pan and set aside.",
+              "Fry the carrot, garlic, ginger and edamame for three minutes, then add the rice.",
+              "Return the tofu and egg, add the soy sauce, remaining oil and green onions, and toss until hot."
+            ],
+            "why": "A midweek dinner from the freezer and the cupboard, once the fresh fish is gone."
+          },
+          {
+            "id": "tuna-pea-pasta",
+            "title": "Tuna, pea and spinach pasta with lemon",
+            "minutes": 20,
+            "servings": 2,
+            "ingredients": [
+              {
+                "name": "canned tuna in water",
+                "quantity": 2,
+                "unit": "can",
+                "prep": "drained"
+              },
+              {
+                "name": "whole wheat pasta (dry)",
+                "quantity": 160,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "green peas (frozen)",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "spinach",
+                "quantity": 3,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "parmesan",
+                "quantity": 40,
+                "unit": "g",
+                "prep": "grated"
+              },
+              {
+                "name": "capers",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "garlic",
+                "quantity": 2,
+                "unit": "clove",
+                "prep": "sliced"
+              },
+              {
+                "name": "lemon",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "zested and juiced"
+              },
+              {
+                "name": "olive oil",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Boil the pasta, adding the peas for the last two minutes. Keep half a cup of the water.",
+              "Warm the garlic and capers in the oil, then add the spinach to wilt.",
+              "Toss in the pasta, peas, tuna, lemon and enough pasta water to loosen.",
+              "Serve with the parmesan."
+            ],
+            "why": "Tins and frozen peas, so nothing fresh has to last until day five."
+          },
+          {
+            "id": "shrimp-coconut-curry",
+            "title": "Shrimp and edamame coconut curry with rice",
+            "minutes": 30,
+            "servings": 2,
+            "ingredients": [
+              {
+                "name": "shrimp",
+                "quantity": 300,
+                "unit": "g",
+                "prep": "peeled"
+              },
+              {
+                "name": "coconut milk (canned)",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "edamame (shelled)",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "bell pepper",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "sliced"
+              },
+              {
+                "name": "sugar snap peas",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "white rice (dry)",
+                "quantity": 0.75,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "curry powder",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "fresh ginger",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": "grated"
+              },
+              {
+                "name": "garlic",
+                "quantity": 2,
+                "unit": "clove",
+                "prep": "minced"
+              },
+              {
+                "name": "fish sauce",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "lime",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "juiced"
+              },
+              {
+                "name": "vegetable oil",
+                "quantity": 2,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Start the rice. Fry the garlic, ginger and curry powder in the oil for a minute.",
+              "Add the coconut milk, pepper, snap peas and edamame and simmer for six minutes.",
+              "Add the shrimp and cook for three minutes until pink.",
+              "Season with fish sauce and lime juice and serve over the rice."
+            ],
+            "why": "Frozen shrimp for the weekend, thawed on the day."
+          },
+          {
+            "id": "cottage-cheese-omelette",
+            "title": "Cottage cheese and spinach omelette with toast",
+            "minutes": 15,
+            "servings": 1,
+            "ingredients": [
+              {
+                "name": "eggs",
+                "quantity": 3,
+                "unit": "each",
+                "prep": "beaten"
+              },
+              {
+                "name": "cottage cheese",
+                "quantity": 150,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "spinach",
+                "quantity": 2,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "parmesan",
+                "quantity": 15,
+                "unit": "g",
+                "prep": "grated"
+              },
+              {
+                "name": "whole wheat bread",
+                "quantity": 2,
+                "unit": "slice",
+                "prep": "toasted"
+              },
+              {
+                "name": "olive oil",
+                "quantity": 1,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Wilt the spinach in the oil in a non-stick pan and spread it out.",
+              "Pour in the eggs and cook gently until nearly set.",
+              "Spoon the cottage cheese and parmesan over one half, fold and cook for a minute more.",
+              "Serve with the toast."
+            ],
+            "why": "Ends the week on eggs and the last of the cottage cheese."
+          }
+        ],
+        "days": [
+          {
+            "day": 1,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "cottage-cheese-bowl"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "tuna-white-bean-salad"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "salmon-asparagus-sweet-potato"
+              }
+            ]
+          },
+          {
+            "day": 2,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "smoked-salmon-toast"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "salmon-asparagus-sweet-potato"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "shrimp-tacos"
+              }
+            ]
+          },
+          {
+            "day": 3,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "cottage-cheese-bowl"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "shrimp-tacos"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "cod-white-beans"
+              }
+            ]
+          },
+          {
+            "day": 4,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "smoked-salmon-toast"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "cod-white-beans"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "tofu-edamame-fried-rice"
+              }
+            ]
+          },
+          {
+            "day": 5,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "cottage-cheese-bowl"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "tofu-edamame-fried-rice"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "tuna-pea-pasta"
+              }
+            ]
+          },
+          {
+            "day": 6,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "smoked-salmon-toast"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "tuna-pea-pasta"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "shrimp-coconut-curry"
+              }
+            ]
+          },
+          {
+            "day": 7,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "cottage-cheese-bowl"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "shrimp-coconut-curry"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "cottage-cheese-omelette"
+              }
+            ]
+          }
+        ]
+      },
+      "attempts": 1,
+      "revisedFor": []
+    }
+  },
+  "garden": {
+    "label": "garden",
+    "placeholder": true,
+    "recordedAt": null,
+    "model": "claude-opus-5-5",
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "costUsd": 0,
+    "data": {
+      "plan": {
+        "title": "Greens early, pantry late",
+        "summary": "Tofu, mushrooms and the soft greens are cooked in the first three days. Lentils, beans and tempeh carry the protein for the rest of the week.",
+        "recipes": [
+          {
+            "id": "blueberry-yogurt-bowls",
+            "title": "Blueberry yogurt bowls with oats and walnuts",
+            "minutes": 5,
+            "servings": 2,
+            "ingredients": [
+              {
+                "name": "greek yogurt",
+                "quantity": 400,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "rolled oats",
+                "quantity": 80,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "milk",
+                "quantity": 0.5,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "blueberries",
+                "quantity": 170,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "walnuts",
+                "quantity": 40,
+                "unit": "g",
+                "prep": "chopped"
+              },
+              {
+                "name": "honey",
+                "quantity": 2,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Stir the oats and milk into the yogurt and leave for five minutes.",
+              "Divide between two bowls.",
+              "Top with the blueberries and walnuts and drizzle with honey."
+            ],
+            "why": "Uses the blueberries, which will not last the week, and the open milk."
+          },
+          {
+            "id": "feta-spinach-eggs",
+            "title": "Feta and spinach scrambled eggs on pita",
+            "minutes": 10,
+            "servings": 2,
+            "ingredients": [
+              {
+                "name": "eggs",
+                "quantity": 6,
+                "unit": "each",
+                "prep": "beaten"
+              },
+              {
+                "name": "spinach",
+                "quantity": 2,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "feta cheese",
+                "quantity": 60,
+                "unit": "g",
+                "prep": "crumbled"
+              },
+              {
+                "name": "cherry tomatoes",
+                "quantity": 100,
+                "unit": "g",
+                "prep": "halved"
+              },
+              {
+                "name": "pita bread",
+                "quantity": 2,
+                "unit": "each",
+                "prep": "toasted"
+              },
+              {
+                "name": "olive oil",
+                "quantity": 2,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Warm the oil in a non-stick pan and wilt the spinach with the tomatoes for a minute.",
+              "Add the eggs and stir gently until softly set.",
+              "Fold in the feta and serve on the toasted pita."
+            ],
+            "why": "A savoury breakfast from the eggs, the spinach and some of the feta."
+          },
+          {
+            "id": "hummus-feta-pitas",
+            "title": "Hummus, cucumber and egg pitas",
+            "minutes": 12,
+            "servings": 2,
+            "ingredients": [
+              {
+                "name": "pita bread",
+                "quantity": 2,
+                "unit": "each",
+                "prep": "warmed"
+              },
+              {
+                "name": "hummus",
+                "quantity": 150,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "eggs",
+                "quantity": 2,
+                "unit": "each",
+                "prep": ""
+              },
+              {
+                "name": "cucumber",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "sliced"
+              },
+              {
+                "name": "feta cheese",
+                "quantity": 60,
+                "unit": "g",
+                "prep": "crumbled"
+              },
+              {
+                "name": "cherry tomatoes",
+                "quantity": 100,
+                "unit": "g",
+                "prep": "halved"
+              },
+              {
+                "name": "spinach",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "lemon juice",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Boil the eggs for eight minutes, cool, peel and quarter.",
+              "Toss the cucumber, tomatoes and spinach with the lemon juice.",
+              "Split the pitas, spread with hummus, and fill with the salad, egg and feta."
+            ],
+            "why": "Day one's lunch: the opened hummus, the cucumber and the first of the tomatoes."
+          },
+          {
+            "id": "crispy-tofu-rice",
+            "title": "Crispy tofu with mushrooms, peppers and rice",
+            "minutes": 30,
+            "servings": 4,
+            "ingredients": [
+              {
+                "name": "tofu (extra firm)",
+                "quantity": 2,
+                "unit": "block",
+                "prep": "pressed and cubed"
+              },
+              {
+                "name": "mushrooms",
+                "quantity": 225,
+                "unit": "g",
+                "prep": "sliced"
+              },
+              {
+                "name": "bell pepper",
+                "quantity": 2,
+                "unit": "each",
+                "prep": "sliced"
+              },
+              {
+                "name": "edamame (shelled)",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "white rice (dry)",
+                "quantity": 1.25,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "soy sauce",
+                "quantity": 3,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "garlic",
+                "quantity": 3,
+                "unit": "clove",
+                "prep": "minced"
+              },
+              {
+                "name": "fresh ginger",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": "grated"
+              },
+              {
+                "name": "cornstarch",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "sesame oil",
+                "quantity": 2,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "vegetable oil",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Start the rice. Toss the tofu with the cornstarch.",
+              "Fry the tofu in the vegetable oil over medium-high heat until golden on all sides, then set aside.",
+              "Stir-fry the mushrooms, peppers, garlic and ginger for five minutes, then add the edamame.",
+              "Return the tofu, add the soy sauce and sesame oil, and toss until glazed."
+            ],
+            "why": "Cooks both blocks of tofu, the mushrooms and the peppers on the first night."
+          },
+          {
+            "id": "kale-white-bean-pasta",
+            "title": "Kale and white bean pasta with parmesan",
+            "minutes": 25,
+            "servings": 4,
+            "ingredients": [
+              {
+                "name": "whole wheat pasta (dry)",
+                "quantity": 320,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "white beans (canned, drained)",
+                "quantity": 2,
+                "unit": "can",
+                "prep": "rinsed"
+              },
+              {
+                "name": "kale",
+                "quantity": 150,
+                "unit": "g",
+                "prep": "stems removed, shredded"
+              },
+              {
+                "name": "cherry tomatoes",
+                "quantity": 80,
+                "unit": "g",
+                "prep": "halved"
+              },
+              {
+                "name": "parmesan",
+                "quantity": 60,
+                "unit": "g",
+                "prep": "grated"
+              },
+              {
+                "name": "fresh basil",
+                "quantity": 20,
+                "unit": "g",
+                "prep": "torn"
+              },
+              {
+                "name": "garlic",
+                "quantity": 4,
+                "unit": "clove",
+                "prep": "sliced"
+              },
+              {
+                "name": "lemon",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "zested and juiced"
+              },
+              {
+                "name": "olive oil",
+                "quantity": 2,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "red pepper flakes",
+                "quantity": 0.5,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Boil the pasta, adding the kale for the last three minutes. Keep a cup of the water.",
+              "Meanwhile, warm the garlic and red pepper flakes in the oil, then add the beans and tomatoes.",
+              "Toss in the drained pasta and kale with the lemon and enough pasta water to make a sauce.",
+              "Finish with the parmesan and basil."
+            ],
+            "why": "Uses the kale and basil on day two and the last of the tomatoes."
+          },
+          {
+            "id": "zucchini-chickpea-shakshuka",
+            "title": "Zucchini and chickpea shakshuka with feta",
+            "minutes": 30,
+            "servings": 4,
+            "ingredients": [
+              {
+                "name": "eggs",
+                "quantity": 8,
+                "unit": "each",
+                "prep": ""
+              },
+              {
+                "name": "chickpeas (canned, drained)",
+                "quantity": 1,
+                "unit": "can",
+                "prep": "rinsed"
+              },
+              {
+                "name": "zucchini",
+                "quantity": 2,
+                "unit": "each",
+                "prep": "diced"
+              },
+              {
+                "name": "crushed tomatoes",
+                "quantity": 1,
+                "unit": "can",
+                "prep": ""
+              },
+              {
+                "name": "feta cheese",
+                "quantity": 80,
+                "unit": "g",
+                "prep": "crumbled"
+              },
+              {
+                "name": "yellow onion",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "diced"
+              },
+              {
+                "name": "garlic",
+                "quantity": 3,
+                "unit": "clove",
+                "prep": "minced"
+              },
+              {
+                "name": "pita bread",
+                "quantity": 4,
+                "unit": "each",
+                "prep": "warmed"
+              },
+              {
+                "name": "ground cumin",
+                "quantity": 1,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "paprika",
+                "quantity": 1,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "olive oil",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Soften the onion and zucchini in the oil for six minutes, then add the garlic, cumin and paprika.",
+              "Stir in the tomatoes and chickpeas and simmer for ten minutes.",
+              "Make eight wells, crack in the eggs, cover and cook for six minutes until the whites are set.",
+              "Scatter with feta and serve with pita."
+            ],
+            "why": "Both zucchini go in on day three, before they soften, with the rest of the feta."
+          },
+          {
+            "id": "red-lentil-dal",
+            "title": "Red lentil and spinach dal with rice",
+            "minutes": 30,
+            "servings": 4,
+            "ingredients": [
+              {
+                "name": "red lentils (dry)",
+                "quantity": 1.5,
+                "unit": "cup",
+                "prep": "rinsed"
+              },
+              {
+                "name": "coconut milk (canned)",
+                "quantity": 1,
+                "unit": "can",
+                "prep": ""
+              },
+              {
+                "name": "canned diced tomatoes",
+                "quantity": 1,
+                "unit": "can",
+                "prep": ""
+              },
+              {
+                "name": "spinach",
+                "quantity": 4,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "white rice (dry)",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "greek yogurt",
+                "quantity": 200,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "yellow onion",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "diced"
+              },
+              {
+                "name": "garlic",
+                "quantity": 3,
+                "unit": "clove",
+                "prep": "minced"
+              },
+              {
+                "name": "fresh ginger",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": "grated"
+              },
+              {
+                "name": "curry powder",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "vegetable oil",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Start the rice. Soften the onion in the oil, then add the garlic, ginger and curry powder for a minute.",
+              "Add the lentils, tomatoes, coconut milk and two cups of water and simmer for eighteen minutes.",
+              "Stir in the spinach until wilted and season to taste.",
+              "Serve over the rice with a spoonful of yogurt."
+            ],
+            "why": "A pantry dinner for midweek, with a fresh bag of spinach stirred through."
+          },
+          {
+            "id": "black-bean-quesadillas",
+            "title": "Black bean and pepper quesadillas with yogurt-lime sauce",
+            "minutes": 25,
+            "servings": 4,
+            "ingredients": [
+              {
+                "name": "flour tortillas",
+                "quantity": 8,
+                "unit": "each",
+                "prep": ""
+              },
+              {
+                "name": "black beans (canned, drained)",
+                "quantity": 2,
+                "unit": "can",
+                "prep": "rinsed and lightly mashed"
+              },
+              {
+                "name": "cheddar cheese",
+                "quantity": 200,
+                "unit": "g",
+                "prep": "grated"
+              },
+              {
+                "name": "bell pepper",
+                "quantity": 2,
+                "unit": "each",
+                "prep": "diced"
+              },
+              {
+                "name": "sweet corn",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "salsa",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "greek yogurt",
+                "quantity": 200,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "lime",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "juiced"
+              },
+              {
+                "name": "ground cumin",
+                "quantity": 1,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Mix the beans, peppers, corn and cumin.",
+              "Spread over four tortillas, cover with cheddar and top with the remaining tortillas.",
+              "Cook in a dry pan for three minutes a side until crisp and melted.",
+              "Stir the lime juice into the yogurt and serve with the quesadillas and salsa."
+            ],
+            "why": "The highest-protein dinner of the week, from tins and a block of cheddar."
+          },
+          {
+            "id": "tempeh-peanut-noodles",
+            "title": "Tempeh, broccoli and peanut noodles",
+            "minutes": 25,
+            "servings": 4,
+            "ingredients": [
+              {
+                "name": "tempeh",
+                "quantity": 2,
+                "unit": "package",
+                "prep": "cubed"
+              },
+              {
+                "name": "broccoli",
+                "quantity": 1,
+                "unit": "head",
+                "prep": "cut into florets"
+              },
+              {
+                "name": "rice noodles (dry)",
+                "quantity": 250,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "carrot",
+                "quantity": 2,
+                "unit": "each",
+                "prep": "cut into ribbons"
+              },
+              {
+                "name": "peanut butter",
+                "quantity": 4,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "soy sauce",
+                "quantity": 3,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "lime",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "juiced"
+              },
+              {
+                "name": "garlic",
+                "quantity": 2,
+                "unit": "clove",
+                "prep": "minced"
+              },
+              {
+                "name": "sesame oil",
+                "quantity": 2,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "vegetable oil",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Soak the noodles in boiling water for eight minutes, adding the broccoli for the last three, then drain.",
+              "Brown the tempeh in the vegetable oil for six minutes.",
+              "Whisk the peanut butter, soy sauce, lime juice, garlic and sesame oil with four tablespoons of hot water.",
+              "Toss everything together with the carrot ribbons."
+            ],
+            "why": "Tempeh keeps well, so it anchors the end of the week."
+          },
+          {
+            "id": "egg-fried-rice",
+            "title": "Egg fried rice with peas and edamame",
+            "minutes": 20,
+            "servings": 2,
+            "ingredients": [
+              {
+                "name": "eggs",
+                "quantity": 4,
+                "unit": "each",
+                "prep": "beaten"
+              },
+              {
+                "name": "white rice (dry)",
+                "quantity": 0.75,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "green peas (frozen)",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "edamame (shelled)",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "carrot",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "diced small"
+              },
+              {
+                "name": "green onions",
+                "quantity": 3,
+                "unit": "each",
+                "prep": "sliced"
+              },
+              {
+                "name": "soy sauce",
+                "quantity": 2,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "sesame oil",
+                "quantity": 2,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "vegetable oil",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Cook the rice and spread it on a plate to cool for five minutes.",
+              "Scramble the eggs in half the vegetable oil and set aside.",
+              "Fry the carrot, peas and edamame in the rest of the oil for three minutes, then add the rice.",
+              "Return the eggs, add the soy sauce, sesame oil and green onions, and toss until hot."
+            ],
+            "why": "A freezer-and-pantry dinner for the last night, when the fresh food is gone."
+          }
+        ],
+        "days": [
+          {
+            "day": 1,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "blueberry-yogurt-bowls"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "hummus-feta-pitas"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "crispy-tofu-rice"
+              }
+            ]
+          },
+          {
+            "day": 2,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "feta-spinach-eggs"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "crispy-tofu-rice"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "kale-white-bean-pasta"
+              }
+            ]
+          },
+          {
+            "day": 3,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "blueberry-yogurt-bowls"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "kale-white-bean-pasta"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "zucchini-chickpea-shakshuka"
+              }
+            ]
+          },
+          {
+            "day": 4,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "feta-spinach-eggs"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "zucchini-chickpea-shakshuka"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "red-lentil-dal"
+              }
+            ]
+          },
+          {
+            "day": 5,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "blueberry-yogurt-bowls"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "red-lentil-dal"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "black-bean-quesadillas"
+              }
+            ]
+          },
+          {
+            "day": 6,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "feta-spinach-eggs"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "black-bean-quesadillas"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "tempeh-peanut-noodles"
+              }
+            ]
+          },
+          {
+            "day": 7,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "blueberry-yogurt-bowls"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "tempeh-peanut-noodles"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "egg-fried-rice"
+              }
+            ]
+          }
+        ]
+      },
+      "attempts": 1,
+      "revisedFor": []
+    }
+  },
+  "weeknight": {
+    "label": "weeknight",
+    "placeholder": true,
+    "recordedAt": null,
+    "model": "claude-opus-5-5",
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "costUsd": 0,
+    "data": {
+      "plan": {
+        "title": "Chicken first, then tacos",
+        "summary": "Raw chicken and turkey are cooked on days 1 and 2. Each dinner makes the next day's lunch, and two breakfasts take turns.",
+        "recipes": [
+          {
+            "id": "yogurt-oat-bowls",
+            "title": "Yogurt and oat bowls with banana and almonds",
+            "minutes": 5,
+            "servings": 2,
+            "ingredients": [
+              {
+                "name": "greek yogurt",
+                "quantity": 400,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "rolled oats",
+                "quantity": 80,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "milk",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "banana",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "sliced"
+              },
+              {
+                "name": "almonds",
+                "quantity": 40,
+                "unit": "g",
+                "prep": "roughly chopped"
+              },
+              {
+                "name": "chia seeds",
+                "quantity": 2,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "honey",
+                "quantity": 2,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Stir the oats into the milk and yogurt and leave for five minutes, or overnight in the fridge.",
+              "Divide between two bowls.",
+              "Top with the banana, almonds and chia seeds, then drizzle with honey."
+            ],
+            "why": "Uses the open milk and the big tub of yogurt for a breakfast that needs no cooking."
+          },
+          {
+            "id": "spinach-cheddar-scramble",
+            "title": "Spinach and cheddar scramble in tortillas",
+            "minutes": 10,
+            "servings": 2,
+            "ingredients": [
+              {
+                "name": "eggs",
+                "quantity": 6,
+                "unit": "each",
+                "prep": "beaten"
+              },
+              {
+                "name": "spinach",
+                "quantity": 2,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "cheddar cheese",
+                "quantity": 60,
+                "unit": "g",
+                "prep": "grated"
+              },
+              {
+                "name": "flour tortillas",
+                "quantity": 2,
+                "unit": "each",
+                "prep": "warmed"
+              },
+              {
+                "name": "butter",
+                "quantity": 2,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "salsa",
+                "quantity": 4,
+                "unit": "tbsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Melt the butter in a non-stick pan over medium heat and wilt the spinach for a minute.",
+              "Pour in the eggs and stir slowly until just set, then fold in the cheddar.",
+              "Spoon into the warm tortillas and top with salsa."
+            ],
+            "why": "Works through the eggs and spinach while both are fresh."
+          },
+          {
+            "id": "egg-avocado-wraps",
+            "title": "Egg, avocado and cheddar wraps",
+            "minutes": 10,
+            "servings": 2,
+            "ingredients": [
+              {
+                "name": "eggs",
+                "quantity": 4,
+                "unit": "each",
+                "prep": ""
+              },
+              {
+                "name": "flour tortillas",
+                "quantity": 2,
+                "unit": "each",
+                "prep": ""
+              },
+              {
+                "name": "avocado",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "sliced"
+              },
+              {
+                "name": "cheddar cheese",
+                "quantity": 60,
+                "unit": "g",
+                "prep": "sliced"
+              },
+              {
+                "name": "spinach",
+                "quantity": 2,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "greek yogurt",
+                "quantity": 150,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "lemon juice",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "hot sauce",
+                "quantity": 1,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Boil the eggs for eight minutes, cool under cold water, peel and slice.",
+              "Stir the lemon juice and hot sauce into the yogurt.",
+              "Spread the yogurt over the tortillas, layer on spinach, egg, avocado and cheddar, and roll up."
+            ],
+            "why": "A first-day lunch from what is already open: one avocado, some spinach and the cheddar."
+          },
+          {
+            "id": "lemon-chicken-broccoli",
+            "title": "Lemon-garlic chicken with broccoli and rice",
+            "minutes": 25,
+            "servings": 4,
+            "ingredients": [
+              {
+                "name": "chicken breast",
+                "quantity": 680,
+                "unit": "g",
+                "prep": "cut into strips"
+              },
+              {
+                "name": "broccoli",
+                "quantity": 1,
+                "unit": "head",
+                "prep": "cut into florets"
+              },
+              {
+                "name": "carrot",
+                "quantity": 3,
+                "unit": "each",
+                "prep": "sliced thin"
+              },
+              {
+                "name": "cooked white rice",
+                "quantity": 2,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "garlic",
+                "quantity": 3,
+                "unit": "clove",
+                "prep": "minced"
+              },
+              {
+                "name": "lemon",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "juiced"
+              },
+              {
+                "name": "soy sauce",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "olive oil",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "salt",
+                "quantity": 0.5,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "black pepper",
+                "quantity": 0.5,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Season the chicken with salt and pepper and brown it in the oil over high heat for five minutes.",
+              "Add the garlic, broccoli and carrots with a splash of water, cover and steam for five minutes.",
+              "Stir in the lemon juice and soy sauce and cook uncovered until the chicken is done.",
+              "Warm the rice and serve the chicken and vegetables over it."
+            ],
+            "why": "Cooks all the raw chicken on day one, with the broccoli and the leftover rice."
+          },
+          {
+            "id": "turkey-bean-tacos",
+            "title": "Turkey and black bean tacos with peppers",
+            "minutes": 25,
+            "servings": 4,
+            "ingredients": [
+              {
+                "name": "ground turkey",
+                "quantity": 450,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "black beans (canned, drained)",
+                "quantity": 1,
+                "unit": "can",
+                "prep": "rinsed"
+              },
+              {
+                "name": "bell pepper",
+                "quantity": 2,
+                "unit": "each",
+                "prep": "diced"
+              },
+              {
+                "name": "yellow onion",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "diced"
+              },
+              {
+                "name": "salsa",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "cheddar cheese",
+                "quantity": 100,
+                "unit": "g",
+                "prep": "grated"
+              },
+              {
+                "name": "flour tortillas",
+                "quantity": 8,
+                "unit": "each",
+                "prep": "warmed"
+              },
+              {
+                "name": "avocado",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "diced"
+              },
+              {
+                "name": "chili powder",
+                "quantity": 2,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "ground cumin",
+                "quantity": 1,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "olive oil",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "salt",
+                "quantity": 0.5,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Soften the onion and peppers in the oil for five minutes.",
+              "Add the turkey, chili powder, cumin and salt and cook, breaking it up, until browned.",
+              "Stir in the beans and half the salsa and simmer for five minutes.",
+              "Fill the tortillas and top with cheddar, avocado and the rest of the salsa."
+            ],
+            "why": "Uses the ground turkey on day two, before it turns, along with both peppers and the second avocado."
+          },
+          {
+            "id": "salmon-zucchini-quinoa",
+            "title": "Roasted salmon with zucchini, tomatoes and quinoa",
+            "minutes": 30,
+            "servings": 4,
+            "ingredients": [
+              {
+                "name": "salmon fillet",
+                "quantity": 4,
+                "unit": "fillet",
+                "prep": ""
+              },
+              {
+                "name": "zucchini",
+                "quantity": 2,
+                "unit": "each",
+                "prep": "cut into half-moons"
+              },
+              {
+                "name": "cherry tomatoes",
+                "quantity": 280,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "quinoa (dry)",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": "rinsed"
+              },
+              {
+                "name": "garlic",
+                "quantity": 2,
+                "unit": "clove",
+                "prep": "sliced"
+              },
+              {
+                "name": "lemon",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "cut into wedges"
+              },
+              {
+                "name": "dried oregano",
+                "quantity": 1,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "olive oil",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "salt",
+                "quantity": 0.5,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Heat the oven to 220 C (425 F). Simmer the quinoa in two cups of water for fifteen minutes.",
+              "Toss the zucchini, tomatoes and garlic with the oil, oregano and salt on a large tray.",
+              "Roast for ten minutes, add the salmon skin side down, and roast twelve minutes more.",
+              "Serve over the quinoa with lemon."
+            ],
+            "why": "Clears the zucchini and the cherry tomatoes; the salmon is the one fresh buy for midweek."
+          },
+          {
+            "id": "beef-broccoli-stir-fry",
+            "title": "Beef and broccoli stir-fry with rice",
+            "minutes": 25,
+            "servings": 4,
+            "ingredients": [
+              {
+                "name": "flank steak",
+                "quantity": 600,
+                "unit": "g",
+                "prep": "sliced thin across the grain"
+              },
+              {
+                "name": "broccoli",
+                "quantity": 1,
+                "unit": "head",
+                "prep": "cut into florets"
+              },
+              {
+                "name": "carrot",
+                "quantity": 2,
+                "unit": "each",
+                "prep": "sliced thin"
+              },
+              {
+                "name": "white rice (dry)",
+                "quantity": 1.25,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "soy sauce",
+                "quantity": 3,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "garlic",
+                "quantity": 3,
+                "unit": "clove",
+                "prep": "minced"
+              },
+              {
+                "name": "fresh ginger",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": "grated"
+              },
+              {
+                "name": "cornstarch",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "sesame oil",
+                "quantity": 2,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "vegetable oil",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Start the rice. Toss the beef with the cornstarch and one tablespoon of the soy sauce.",
+              "Sear the beef in the vegetable oil over high heat for two minutes, then set it aside.",
+              "Stir-fry the broccoli, carrots, garlic and ginger with a splash of water for four minutes.",
+              "Return the beef, add the remaining soy sauce and the sesame oil, and toss for a minute."
+            ],
+            "why": "Finishes the carrots and gives the week a fast dinner that reheats well."
+          },
+          {
+            "id": "turkey-meatball-pasta",
+            "title": "Turkey meatballs in marinara with whole wheat pasta",
+            "minutes": 30,
+            "servings": 4,
+            "ingredients": [
+              {
+                "name": "ground turkey",
+                "quantity": 500,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "eggs",
+                "quantity": 1,
+                "unit": "each",
+                "prep": ""
+              },
+              {
+                "name": "breadcrumbs",
+                "quantity": 40,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "parmesan",
+                "quantity": 40,
+                "unit": "g",
+                "prep": "grated"
+              },
+              {
+                "name": "marinara sauce",
+                "quantity": 1,
+                "unit": "jar",
+                "prep": ""
+              },
+              {
+                "name": "whole wheat pasta (dry)",
+                "quantity": 320,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "spinach",
+                "quantity": 2,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "garlic",
+                "quantity": 2,
+                "unit": "clove",
+                "prep": "minced"
+              },
+              {
+                "name": "dried oregano",
+                "quantity": 1,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Mix the turkey, egg, breadcrumbs, garlic, oregano and half the parmesan and roll into sixteen balls.",
+              "Brown the meatballs in a wide pan for five minutes, turning once.",
+              "Pour in the marinara, cover and simmer for twelve minutes while the pasta boils.",
+              "Stir the spinach into the sauce to wilt, then serve over the pasta with the rest of the parmesan."
+            ],
+            "why": "A second pack of turkey later in the week, with spinach stirred in to use up the bag."
+          },
+          {
+            "id": "chicken-thigh-couscous",
+            "title": "Skillet chicken thighs with carrots and couscous",
+            "minutes": 30,
+            "servings": 4,
+            "ingredients": [
+              {
+                "name": "chicken thigh",
+                "quantity": 700,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "carrot",
+                "quantity": 4,
+                "unit": "each",
+                "prep": "cut into coins"
+              },
+              {
+                "name": "couscous (dry)",
+                "quantity": 1,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "chicken broth",
+                "quantity": 1.5,
+                "unit": "cup",
+                "prep": ""
+              },
+              {
+                "name": "yellow onion",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "sliced"
+              },
+              {
+                "name": "garlic",
+                "quantity": 2,
+                "unit": "clove",
+                "prep": "minced"
+              },
+              {
+                "name": "lemon",
+                "quantity": 1,
+                "unit": "each",
+                "prep": "juiced"
+              },
+              {
+                "name": "parsley",
+                "quantity": 0.25,
+                "unit": "cup",
+                "prep": "chopped"
+              },
+              {
+                "name": "ground cumin",
+                "quantity": 1,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "paprika",
+                "quantity": 1,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "olive oil",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Rub the chicken with cumin and paprika and brown it in the oil for four minutes a side.",
+              "Add the onion, carrots and garlic and cook for three minutes.",
+              "Pour in the broth, cover and simmer for ten minutes until the chicken is cooked through.",
+              "Stir in the couscous, cover, take off the heat for five minutes, then finish with lemon and parsley."
+            ],
+            "why": "One pan, and it makes Sunday's lunch as well."
+          },
+          {
+            "id": "sirloin-sweet-potato",
+            "title": "Seared sirloin with sweet potato and green beans",
+            "minutes": 30,
+            "servings": 2,
+            "ingredients": [
+              {
+                "name": "sirloin steak",
+                "quantity": 350,
+                "unit": "g",
+                "prep": ""
+              },
+              {
+                "name": "sweet potato",
+                "quantity": 2,
+                "unit": "each",
+                "prep": "cut into small cubes"
+              },
+              {
+                "name": "green beans",
+                "quantity": 250,
+                "unit": "g",
+                "prep": "trimmed"
+              },
+              {
+                "name": "butter",
+                "quantity": 1,
+                "unit": "tbsp",
+                "prep": ""
+              },
+              {
+                "name": "garlic",
+                "quantity": 2,
+                "unit": "clove",
+                "prep": "crushed"
+              },
+              {
+                "name": "olive oil",
+                "quantity": 2,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "salt",
+                "quantity": 0.5,
+                "unit": "tsp",
+                "prep": ""
+              },
+              {
+                "name": "black pepper",
+                "quantity": 0.5,
+                "unit": "tsp",
+                "prep": ""
+              }
+            ],
+            "steps": [
+              "Roast the sweet potato with the oil and half the salt at 220 C (425 F) for twenty-five minutes.",
+              "Boil the green beans for four minutes and drain.",
+              "Season the steak and sear it in a hot pan for three minutes a side, adding the butter and garlic at the end.",
+              "Rest the steak for five minutes, slice, and serve with the vegetables and the pan butter."
+            ],
+            "why": "A simple end to the week that needs nothing left over."
+          }
+        ],
+        "days": [
+          {
+            "day": 1,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "yogurt-oat-bowls"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "egg-avocado-wraps"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "lemon-chicken-broccoli"
+              }
+            ]
+          },
+          {
+            "day": 2,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "spinach-cheddar-scramble"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "lemon-chicken-broccoli"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "turkey-bean-tacos"
+              }
+            ]
+          },
+          {
+            "day": 3,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "yogurt-oat-bowls"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "turkey-bean-tacos"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "salmon-zucchini-quinoa"
+              }
+            ]
+          },
+          {
+            "day": 4,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "spinach-cheddar-scramble"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "salmon-zucchini-quinoa"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "beef-broccoli-stir-fry"
+              }
+            ]
+          },
+          {
+            "day": 5,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "yogurt-oat-bowls"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "beef-broccoli-stir-fry"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "turkey-meatball-pasta"
+              }
+            ]
+          },
+          {
+            "day": 6,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "spinach-cheddar-scramble"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "turkey-meatball-pasta"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "chicken-thigh-couscous"
+              }
+            ]
+          },
+          {
+            "day": 7,
+            "meals": [
+              {
+                "slot": "breakfast",
+                "recipeId": "yogurt-oat-bowls"
+              },
+              {
+                "slot": "lunch",
+                "recipeId": "chicken-thigh-couscous"
+              },
+              {
+                "slot": "dinner",
+                "recipeId": "sirloin-sweet-potato"
+              }
+            ]
+          }
+        ]
+      },
+      "attempts": 1,
+      "revisedFor": []
+    }
+  }
+}

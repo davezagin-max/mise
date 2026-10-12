@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { buildGroceryList, groceryText, purchaseAmount, type GroceryList } from "@/lib/grocery";
+import {
+  buildGroceryList,
+  describeAmount,
+  groceryText,
+  purchaseAmount,
+  type GroceryList,
+} from "@/lib/grocery";
 import { foodById } from "@/lib/nutrition/foods";
 import type { Quantity } from "@/lib/types";
 import { plan, recipe, week } from "./helpers";
@@ -93,8 +99,8 @@ describe("needed minus on hand", () => {
     expect(chicken.needGrams).toBeCloseTo(1050, 6);
     expect(chicken.haveGrams).toBeCloseTo(907.18, 1);
     expect(chicken.buyGrams).toBeCloseTo(1050 - 907.18474, 3);
-    expect(chicken.amount).toBe("1");
-    expect(chicken.detail).toContain("need 1.05 kg, have 905 g");
+    expect(chicken.amount).toBe("150 g");
+    expect(chicken.detail).toBe("5.3 oz; need 1.05 kg, have 905 g");
   });
 
   it("marks food as covered when stock meets the need", () => {
@@ -104,7 +110,12 @@ describe("needed minus on hand", () => {
     expect(eggs.buyGrams).toBeCloseTo(100, 6);
     expect(find(list, "milk-2")).toMatchObject({ status: "covered" });
     // 7 batches / 2 x 3 cloves x 3 g = 31.5 g; one head is 40 g.
-    expect(find(list, "garlic")).toMatchObject({ status: "covered", detail: "have 40 g" });
+    expect(find(list, "garlic")).toMatchObject({
+      status: "covered",
+      amount: "¾ head",
+      detail: "have 1 head",
+    });
+    expect(find(list, "milk-2")).toMatchObject({ amount: "7 cups", detail: "have 16 cups" });
     expect(list.covered.map((item) => item.key)).toContain("garlic");
   });
 
@@ -211,6 +222,17 @@ describe("purchaseAmount", () => {
     expect(amount("cheddar", 113).amount).toBe("125 g");
     expect(amount("ground-beef", 500)).toEqual({ amount: "500 g", detail: "1.1 lb" });
     expect(amount("feta", 60).amount).toBe("1 block");
+  });
+
+  it("describes an amount in the unit a cook thinks in", () => {
+    const say = (id: string, grams: number) => describeAmount(foodById(id)!, grams);
+    expect(say("egg", 1150)).toBe("23");
+    expect(say("chickpeas", 375)).toBe("1½ cans");
+    expect(say("milk-2", 976)).toBe("4 cups");
+    expect(say("olive-oil", 27)).toBe("2 tbsp");
+    expect(say("cumin", 4.2)).toBe("2 tsp");
+    expect(say("chicken-breast", 680)).toBe("680 g");
+    expect(say("cherry-tomatoes", 280)).toBe("280 g");
   });
 
   it("measures liquids by volume", () => {

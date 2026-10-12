@@ -60,8 +60,8 @@ export interface MealPlan {
   days: PlanDay[];
 }
 
-export type Diet = "omnivore" | "pescatarian" | "vegetarian" | "vegan";
-export const DIETS: Diet[] = ["omnivore", "pescatarian", "vegetarian", "vegan"];
+export const DIETS = ["omnivore", "pescatarian", "vegetarian", "vegan"] as const;
+export type Diet = (typeof DIETS)[number];
 export const COOK_TIMES = [20, 30, 45, 60] as const;
 
 export interface Prefs {

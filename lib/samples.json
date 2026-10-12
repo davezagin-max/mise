@@ -1,0 +1,26 @@
+[
+  {
+    "id": "weeknight",
+    "title": "The weeknight fridge",
+    "blurb": "Chicken, ground turkey, eggs and a drawer of vegetables. Two people, 30-minute dinners.",
+    "image": "/samples/weeknight.png",
+    "alt": "Illustration of an open fridge holding milk, yogurt, eggs, cheddar, chicken, ground turkey, tortillas, rice, spinach, tomatoes, broccoli, peppers, carrots, zucchini, lemons and avocados.",
+    "prefs": { "diet": "omnivore", "maxMinutes": 30, "servings": 2, "proteinTarget": 110 }
+  },
+  {
+    "id": "garden",
+    "title": "The vegetarian fridge",
+    "blurb": "Tofu, eggs, feta, hummus and plenty of greens. Two people, no meat or fish.",
+    "image": "/samples/garden.png",
+    "alt": "Illustration of an open fridge holding tofu, eggs, yogurt, feta, hummus, milk, parmesan, spinach, kale, mushrooms, zucchini, peppers, tomatoes, cucumber, lemons, blueberries, basil and pita.",
+    "prefs": { "diet": "vegetarian", "maxMinutes": 30, "servings": 2, "proteinTarget": 80 }
+  },
+  {
+    "id": "catch",
+    "title": "The high-protein fridge",
+    "blurb": "Salmon, shrimp, cottage cheese and eggs. One person, pescatarian, 130 g of protein a day.",
+    "image": "/samples/catch.png",
+    "alt": "Illustration of an open fridge holding salmon, shrimp, smoked salmon, eggs, cottage cheese, yogurt, asparagus, spinach, avocados, cucumber, tomatoes, lemons, limes, cilantro, corn tortillas, sweet potatoes, a red onion and jalapenos.",
+    "prefs": { "diet": "pescatarian", "maxMinutes": 45, "servings": 1, "proteinTarget": 130 }
+  }
+]

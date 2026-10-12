@@ -1,0 +1,434 @@
+{
+  "catch": {
+    "label": "catch",
+    "placeholder": true,
+    "recordedAt": null,
+    "model": "claude-opus-5-5",
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "costUsd": 0,
+    "data": {
+      "summary": "A high-protein fridge for one: fresh salmon and shrimp, smoked salmon, eggs, cottage cheese and yogurt, with greens and citrus.",
+      "items": [
+        {
+          "name": "salmon fillet",
+          "quantity": 2,
+          "unit": "fillet",
+          "confidence": "high",
+          "note": "Two fillets on a tray."
+        },
+        {
+          "name": "shrimp",
+          "quantity": 340,
+          "unit": "g",
+          "confidence": "high",
+          "note": "Twelve-ounce bag, label visible."
+        },
+        {
+          "name": "smoked salmon",
+          "quantity": 115,
+          "unit": "g",
+          "confidence": "medium",
+          "note": "Flat four-ounce pack."
+        },
+        {
+          "name": "eggs",
+          "quantity": 6,
+          "unit": "each",
+          "confidence": "high",
+          "note": "Half-dozen carton."
+        },
+        {
+          "name": "cottage cheese",
+          "quantity": 450,
+          "unit": "g",
+          "confidence": "high",
+          "note": "Sixteen-ounce tub."
+        },
+        {
+          "name": "greek yogurt",
+          "quantity": 500,
+          "unit": "g",
+          "confidence": "medium",
+          "note": "Tub, assumed nearly full."
+        },
+        {
+          "name": "asparagus",
+          "quantity": 1,
+          "unit": "bunch",
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "name": "spinach",
+          "quantity": 140,
+          "unit": "g",
+          "confidence": "high",
+          "note": "Five-ounce bag."
+        },
+        {
+          "name": "avocado",
+          "quantity": 2,
+          "unit": "each",
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "name": "cucumber",
+          "quantity": 1,
+          "unit": "each",
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "name": "cherry tomatoes",
+          "quantity": 280,
+          "unit": "g",
+          "confidence": "medium",
+          "note": "One pint punnet."
+        },
+        {
+          "name": "lemon",
+          "quantity": 2,
+          "unit": "each",
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "name": "lime",
+          "quantity": 2,
+          "unit": "each",
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "name": "cilantro",
+          "quantity": 1,
+          "unit": "bunch",
+          "confidence": "medium",
+          "note": "Leafy herb bunch; could be parsley."
+        },
+        {
+          "name": "corn tortillas",
+          "quantity": 12,
+          "unit": "each",
+          "confidence": "medium",
+          "note": "Stack in a bag; count is a guess."
+        },
+        {
+          "name": "sweet potato",
+          "quantity": 2,
+          "unit": "each",
+          "confidence": "medium",
+          "note": ""
+        },
+        {
+          "name": "red onion",
+          "quantity": 1,
+          "unit": "each",
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "name": "jalapeno",
+          "quantity": 2,
+          "unit": "each",
+          "confidence": "low",
+          "note": "Small green chillies; variety unclear."
+        }
+      ]
+    }
+  },
+  "garden": {
+    "label": "garden",
+    "placeholder": true,
+    "recordedAt": null,
+    "model": "claude-opus-5-5",
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "costUsd": 0,
+    "data": {
+      "summary": "A vegetarian fridge: tofu, eggs, yogurt and three cheeses, with greens, mushrooms and summer vegetables below.",
+      "items": [
+        {
+          "name": "tofu",
+          "quantity": 2,
+          "unit": "block",
+          "confidence": "high",
+          "note": "Two water-packed blocks, label visible."
+        },
+        {
+          "name": "eggs",
+          "quantity": 12,
+          "unit": "each",
+          "confidence": "high",
+          "note": "Full carton."
+        },
+        {
+          "name": "greek yogurt",
+          "quantity": 900,
+          "unit": "g",
+          "confidence": "medium",
+          "note": "Large tub, assumed nearly full."
+        },
+        {
+          "name": "feta cheese",
+          "quantity": 1,
+          "unit": "block",
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "name": "hummus",
+          "quantity": 1,
+          "unit": "container",
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "name": "milk",
+          "quantity": 4,
+          "unit": "cup",
+          "confidence": "medium",
+          "note": "Quart carton; the level is a guess."
+        },
+        {
+          "name": "parmesan",
+          "quantity": 120,
+          "unit": "g",
+          "confidence": "low",
+          "note": "Wrapped wedge; could be another hard cheese."
+        },
+        {
+          "name": "spinach",
+          "quantity": 140,
+          "unit": "g",
+          "confidence": "high",
+          "note": "Five-ounce bag."
+        },
+        {
+          "name": "kale",
+          "quantity": 1,
+          "unit": "bunch",
+          "confidence": "medium",
+          "note": "Loose bunch, hard to weigh by eye."
+        },
+        {
+          "name": "mushrooms",
+          "quantity": 225,
+          "unit": "g",
+          "confidence": "high",
+          "note": "Eight-ounce punnet."
+        },
+        {
+          "name": "zucchini",
+          "quantity": 2,
+          "unit": "each",
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "name": "bell pepper",
+          "quantity": 2,
+          "unit": "each",
+          "confidence": "high",
+          "note": "One red, one orange."
+        },
+        {
+          "name": "cherry tomatoes",
+          "quantity": 280,
+          "unit": "g",
+          "confidence": "medium",
+          "note": "One pint punnet."
+        },
+        {
+          "name": "cucumber",
+          "quantity": 1,
+          "unit": "each",
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "name": "lemon",
+          "quantity": 3,
+          "unit": "each",
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "name": "blueberries",
+          "quantity": 170,
+          "unit": "g",
+          "confidence": "high",
+          "note": "Six-ounce clamshell."
+        },
+        {
+          "name": "fresh basil",
+          "quantity": 30,
+          "unit": "g",
+          "confidence": "medium",
+          "note": "Small bunch in a glass."
+        },
+        {
+          "name": "pita bread",
+          "quantity": 4,
+          "unit": "each",
+          "confidence": "medium",
+          "note": "Bag partly hidden; count is a guess."
+        }
+      ]
+    }
+  },
+  "weeknight": {
+    "label": "weeknight",
+    "placeholder": true,
+    "recordedAt": null,
+    "model": "claude-opus-5-5",
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "costUsd": 0,
+    "data": {
+      "summary": "A well-stocked family fridge: raw chicken and ground turkey, eggs and dairy on top, and two drawers of vegetables.",
+      "items": [
+        {
+          "name": "chicken breast",
+          "quantity": 680,
+          "unit": "g",
+          "confidence": "high",
+          "note": "Tray of three breasts, label visible."
+        },
+        {
+          "name": "ground turkey",
+          "quantity": 450,
+          "unit": "g",
+          "confidence": "high",
+          "note": "One-pound package, label visible."
+        },
+        {
+          "name": "eggs",
+          "quantity": 10,
+          "unit": "each",
+          "confidence": "high",
+          "note": "Open carton with two empty slots."
+        },
+        {
+          "name": "milk",
+          "quantity": 6,
+          "unit": "cup",
+          "confidence": "medium",
+          "note": "Half-gallon carton; the level is a guess."
+        },
+        {
+          "name": "greek yogurt",
+          "quantity": 900,
+          "unit": "g",
+          "confidence": "medium",
+          "note": "Large tub, assumed nearly full."
+        },
+        {
+          "name": "cheddar cheese",
+          "quantity": 225,
+          "unit": "g",
+          "confidence": "high",
+          "note": "Eight-ounce block."
+        },
+        {
+          "name": "spinach",
+          "quantity": 140,
+          "unit": "g",
+          "confidence": "high",
+          "note": "Five-ounce bag."
+        },
+        {
+          "name": "broccoli",
+          "quantity": 1,
+          "unit": "head",
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "name": "bell pepper",
+          "quantity": 2,
+          "unit": "each",
+          "confidence": "high",
+          "note": "One red, one yellow."
+        },
+        {
+          "name": "cherry tomatoes",
+          "quantity": 280,
+          "unit": "g",
+          "confidence": "medium",
+          "note": "One pint punnet."
+        },
+        {
+          "name": "carrot",
+          "quantity": 5,
+          "unit": "each",
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "name": "zucchini",
+          "quantity": 1,
+          "unit": "each",
+          "confidence": "medium",
+          "note": "Could be a cucumber."
+        },
+        {
+          "name": "lemon",
+          "quantity": 2,
+          "unit": "each",
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "name": "avocado",
+          "quantity": 2,
+          "unit": "each",
+          "confidence": "medium",
+          "note": "Dark and oval; could be another fruit."
+        },
+        {
+          "name": "flour tortillas",
+          "quantity": 8,
+          "unit": "each",
+          "confidence": "medium",
+          "note": "Pack of eight; count not visible."
+        },
+        {
+          "name": "cooked white rice",
+          "quantity": 2,
+          "unit": "cup",
+          "confidence": "low",
+          "note": "Lidded container of what looks like cooked rice."
+        },
+        {
+          "name": "salsa",
+          "quantity": 1,
+          "unit": "jar",
+          "confidence": "medium",
+          "note": "Label partly turned away."
+        },
+        {
+          "name": "butter",
+          "quantity": 1,
+          "unit": "stick",
+          "confidence": "high",
+          "note": ""
+        }
+      ]
+    }
+  }
+}

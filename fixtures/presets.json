@@ -1,4 +1,335 @@
 [
-  { "route": "/api/example", "body": { "demoId": "powder-day", "topic": "a powder day in the Wasatch" } },
-  { "route": "/api/example", "body": { "demoId": "house-set", "topic": "the first drop in a house set" } }
+  {
+    "route": "/api/scan",
+    "body": {
+      "demoId": "weeknight",
+      "sampleId": "weeknight"
+    }
+  },
+  {
+    "route": "/api/scan",
+    "body": {
+      "demoId": "garden",
+      "sampleId": "garden"
+    }
+  },
+  {
+    "route": "/api/scan",
+    "body": {
+      "demoId": "catch",
+      "sampleId": "catch"
+    }
+  },
+  {
+    "route": "/api/plan",
+    "body": {
+      "demoId": "weeknight",
+      "ingredients": [
+        {
+          "name": "chicken breast",
+          "quantity": 680,
+          "unit": "g"
+        },
+        {
+          "name": "ground turkey",
+          "quantity": 450,
+          "unit": "g"
+        },
+        {
+          "name": "eggs",
+          "quantity": 10,
+          "unit": "each"
+        },
+        {
+          "name": "milk",
+          "quantity": 6,
+          "unit": "cup"
+        },
+        {
+          "name": "greek yogurt",
+          "quantity": 900,
+          "unit": "g"
+        },
+        {
+          "name": "cheddar cheese",
+          "quantity": 225,
+          "unit": "g"
+        },
+        {
+          "name": "spinach",
+          "quantity": 140,
+          "unit": "g"
+        },
+        {
+          "name": "broccoli",
+          "quantity": 1,
+          "unit": "head"
+        },
+        {
+          "name": "bell pepper",
+          "quantity": 2,
+          "unit": "each"
+        },
+        {
+          "name": "cherry tomatoes",
+          "quantity": 280,
+          "unit": "g"
+        },
+        {
+          "name": "carrot",
+          "quantity": 5,
+          "unit": "each"
+        },
+        {
+          "name": "zucchini",
+          "quantity": 1,
+          "unit": "each"
+        },
+        {
+          "name": "lemon",
+          "quantity": 2,
+          "unit": "each"
+        },
+        {
+          "name": "avocado",
+          "quantity": 2,
+          "unit": "each"
+        },
+        {
+          "name": "flour tortillas",
+          "quantity": 8,
+          "unit": "each"
+        },
+        {
+          "name": "cooked white rice",
+          "quantity": 2,
+          "unit": "cup"
+        },
+        {
+          "name": "salsa",
+          "quantity": 1,
+          "unit": "jar"
+        },
+        {
+          "name": "butter",
+          "quantity": 1,
+          "unit": "stick"
+        }
+      ],
+      "prefs": {
+        "diet": "omnivore",
+        "maxMinutes": 30,
+        "servings": 2,
+        "proteinTarget": 110
+      }
+    }
+  },
+  {
+    "route": "/api/plan",
+    "body": {
+      "demoId": "garden",
+      "ingredients": [
+        {
+          "name": "tofu",
+          "quantity": 2,
+          "unit": "block"
+        },
+        {
+          "name": "eggs",
+          "quantity": 12,
+          "unit": "each"
+        },
+        {
+          "name": "greek yogurt",
+          "quantity": 900,
+          "unit": "g"
+        },
+        {
+          "name": "feta cheese",
+          "quantity": 1,
+          "unit": "block"
+        },
+        {
+          "name": "hummus",
+          "quantity": 1,
+          "unit": "container"
+        },
+        {
+          "name": "milk",
+          "quantity": 4,
+          "unit": "cup"
+        },
+        {
+          "name": "parmesan",
+          "quantity": 120,
+          "unit": "g"
+        },
+        {
+          "name": "spinach",
+          "quantity": 140,
+          "unit": "g"
+        },
+        {
+          "name": "kale",
+          "quantity": 1,
+          "unit": "bunch"
+        },
+        {
+          "name": "mushrooms",
+          "quantity": 225,
+          "unit": "g"
+        },
+        {
+          "name": "zucchini",
+          "quantity": 2,
+          "unit": "each"
+        },
+        {
+          "name": "bell pepper",
+          "quantity": 2,
+          "unit": "each"
+        },
+        {
+          "name": "cherry tomatoes",
+          "quantity": 280,
+          "unit": "g"
+        },
+        {
+          "name": "cucumber",
+          "quantity": 1,
+          "unit": "each"
+        },
+        {
+          "name": "lemon",
+          "quantity": 3,
+          "unit": "each"
+        },
+        {
+          "name": "blueberries",
+          "quantity": 170,
+          "unit": "g"
+        },
+        {
+          "name": "fresh basil",
+          "quantity": 30,
+          "unit": "g"
+        },
+        {
+          "name": "pita bread",
+          "quantity": 4,
+          "unit": "each"
+        }
+      ],
+      "prefs": {
+        "diet": "vegetarian",
+        "maxMinutes": 30,
+        "servings": 2,
+        "proteinTarget": 80
+      }
+    }
+  },
+  {
+    "route": "/api/plan",
+    "body": {
+      "demoId": "catch",
+      "ingredients": [
+        {
+          "name": "salmon fillet",
+          "quantity": 2,
+          "unit": "fillet"
+        },
+        {
+          "name": "shrimp",
+          "quantity": 340,
+          "unit": "g"
+        },
+        {
+          "name": "smoked salmon",
+          "quantity": 115,
+          "unit": "g"
+        },
+        {
+          "name": "eggs",
+          "quantity": 6,
+          "unit": "each"
+        },
+        {
+          "name": "cottage cheese",
+          "quantity": 450,
+          "unit": "g"
+        },
+        {
+          "name": "greek yogurt",
+          "quantity": 500,
+          "unit": "g"
+        },
+        {
+          "name": "asparagus",
+          "quantity": 1,
+          "unit": "bunch"
+        },
+        {
+          "name": "spinach",
+          "quantity": 140,
+          "unit": "g"
+        },
+        {
+          "name": "avocado",
+          "quantity": 2,
+          "unit": "each"
+        },
+        {
+          "name": "cucumber",
+          "quantity": 1,
+          "unit": "each"
+        },
+        {
+          "name": "cherry tomatoes",
+          "quantity": 280,
+          "unit": "g"
+        },
+        {
+          "name": "lemon",
+          "quantity": 2,
+          "unit": "each"
+        },
+        {
+          "name": "lime",
+          "quantity": 2,
+          "unit": "each"
+        },
+        {
+          "name": "cilantro",
+          "quantity": 1,
+          "unit": "bunch"
+        },
+        {
+          "name": "corn tortillas",
+          "quantity": 12,
+          "unit": "each"
+        },
+        {
+          "name": "sweet potato",
+          "quantity": 2,
+          "unit": "each"
+        },
+        {
+          "name": "red onion",
+          "quantity": 1,
+          "unit": "each"
+        },
+        {
+          "name": "jalapeno",
+          "quantity": 2,
+          "unit": "each"
+        }
+      ],
+      "prefs": {
+        "diet": "pescatarian",
+        "maxMinutes": 45,
+        "servings": 1,
+        "proteinTarget": 130
+      }
+    }
+  }
 ]
