@@ -1,35 +1,93 @@
 {
+  "port": 3280,
   "shots": [
+    {
+      "name": "first",
+      "path": "/",
+      "theme": "light",
+      "viewport": "desktop"
+    },
+    {
+      "name": "confirm",
+      "path": "/",
+      "theme": "light",
+      "viewport": "desktop",
+      "actions": [
+        { "click": "text=The weeknight fridge" },
+        { "waitFor": "text=Is this what you have?" },
+        { "wait": 300 }
+      ]
+    },
     {
       "name": "hero",
       "path": "/",
       "theme": "light",
       "viewport": "desktop",
-      "actions": [{ "click": "text=a powder day in the Wasatch" }, { "waitFor": "figure" }]
+      "actions": [
+        { "click": "text=The weeknight fridge" },
+        { "waitFor": "text=Is this what you have?" },
+        { "click": "text=Plan my week" },
+        { "waitFor": "text=Checked by code" },
+        { "wait": 400 }
+      ]
     },
     {
       "name": "hero-dark",
       "path": "/",
       "theme": "dark",
       "viewport": "desktop",
-      "actions": [{ "click": "text=a powder day in the Wasatch" }, { "waitFor": "figure" }]
+      "actions": [
+        { "click": "text=The vegetarian fridge" },
+        { "waitFor": "text=Is this what you have?" },
+        { "click": "text=Plan my week" },
+        { "waitFor": "text=Checked by code" },
+        { "wait": 400 }
+      ]
+    },
+    {
+      "name": "groceries",
+      "path": "/",
+      "theme": "light",
+      "viewport": "desktop",
+      "actions": [
+        { "click": "text=The vegetarian fridge" },
+        { "waitFor": "text=Is this what you have?" },
+        { "click": "text=Plan my week" },
+        { "waitFor": "text=Checked by code" },
+        { "click": "text=Open the grocery list" },
+        { "waitFor": "text=in the basket" },
+        { "wait": 300 }
+      ]
+    },
+    {
+      "name": "mobile-first",
+      "path": "/",
+      "theme": "light",
+      "viewport": "mobile"
+    },
+    {
+      "name": "mobile-confirm",
+      "path": "/",
+      "theme": "light",
+      "viewport": "mobile",
+      "actions": [
+        { "click": "text=The high-protein fridge" },
+        { "waitFor": "text=Is this what you have?" },
+        { "wait": 300 }
+      ]
     },
     {
       "name": "mobile",
       "path": "/",
-      "theme": "dark",
+      "theme": "light",
       "viewport": "mobile",
-      "actions": [{ "click": "text=the first drop in a house set" }, { "waitFor": "figure" }]
+      "actions": [
+        { "click": "text=The high-protein fridge" },
+        { "waitFor": "text=Is this what you have?" },
+        { "click": "text=Plan my week" },
+        { "waitFor": "text=Checked by code" },
+        { "wait": 400 }
+      ]
     }
-  ],
-  "gif": {
-    "path": "/",
-    "theme": "dark",
-    "actions": [
-      { "wait": 500 },
-      { "click": "text=a powder day in the Wasatch" },
-      { "waitFor": "figure" },
-      { "wait": 1200 }
-    ]
-  }
+  ]
 }

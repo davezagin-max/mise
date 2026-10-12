@@ -198,7 +198,7 @@ describe("ordering and notes", () => {
 
   it("writes a plain-text list", () => {
     const text = groceryText(buildGroceryList(weekPlan(), { servings: 1 }, []));
-    expect(text).toContain("PRODUCE\n- Spinach: 1 bunch");
+    expect(text).toContain("PRODUCE\n- Spinach: 225 g");
     expect(text).toContain("- Eggs: 14");
     expect(text).toContain("PANTRY STAPLES\nGround cinnamon, Soy sauce");
   });

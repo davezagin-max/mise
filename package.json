@@ -15,7 +15,8 @@
     "record": "node scripts/record.mjs --only /api/scan && node scripts/sync-presets.mjs && node scripts/record.mjs --only /api/plan",
     "screenshots": "node scripts/screenshot.mjs",
     "presets": "node scripts/sync-presets.mjs",
-    "samples": "node scripts/make-samples.mjs"
+    "samples": "node scripts/make-samples.mjs",
+    "ui:check": "node scripts/ui-check.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

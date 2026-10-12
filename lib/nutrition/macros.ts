@@ -7,7 +7,7 @@
  * and reported, so a total is always a lower bound the visitor can see the
  * gaps in, never a guess.
  */
-import { toGrams, type GramFailure } from "../units";
+import { toGrams, type GramFailure, type UnitKind } from "../units";
 import type { MealPlan, Quantity, Recipe } from "../types";
 import type { Food } from "./foods";
 import { matchFood } from "./match";
@@ -48,7 +48,7 @@ export function macrosForGrams(food: Food, grams: number): Macros {
 }
 
 export type Resolved =
-  | { status: "ok"; food: Food; grams: number; macros: Macros }
+  | { status: "ok"; food: Food; grams: number; via: UnitKind; macros: Macros }
   /** The name is not in the nutrition data. */
   | { status: "unmatched" }
   /** The food is known but this quantity cannot become grams. */
@@ -59,7 +59,13 @@ export function resolve(item: Quantity): Resolved {
   if (!food) return { status: "unmatched" };
   const grams = toGrams(item.quantity, item.unit, food);
   if (!grams.ok) return { status: "unconvertible", food, reason: grams.reason };
-  return { status: "ok", food, grams: grams.grams, macros: macrosForGrams(food, grams.grams) };
+  return {
+    status: "ok",
+    food,
+    grams: grams.grams,
+    via: grams.via,
+    macros: macrosForGrams(food, grams.grams),
+  };
 }
 
 export interface RecipeNutrition {

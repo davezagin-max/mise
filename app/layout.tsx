@@ -1,20 +1,33 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Young_Serif } from "next/font/google";
+import { RegisterServiceWorker } from "@/components/app/RegisterServiceWorker";
 import { KeyProvider } from "@/components/kit/KeyProvider";
-import { THEME_INIT_SCRIPT } from "@/components/kit/ThemeToggle";
+import { THEME_INIT_SCRIPT } from "@/components/kit/theme-script";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const display = Young_Serif({
+  variable: "--font-display-face",
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export const metadata: Metadata = {
-  title: "Starter",
-  description: "Portfolio project starter.",
+  title: "Mise: fridge to meal plan",
+  description:
+    "Photograph your fridge and get a week of meals that use what you have, with macros computed from nutrition data and a grocery list.",
+  applicationName: "Mise",
+  appleWebApp: { capable: true, title: "Mise", statusBarStyle: "default" },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f5eedd" },
+    { media: "(prefers-color-scheme: dark)", color: "#161912" },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -22,7 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${display.variable} h-full antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
@@ -35,6 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <KeyProvider>{children}</KeyProvider>
+        <RegisterServiceWorker />
       </body>
     </html>
   );
