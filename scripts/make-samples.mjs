@@ -76,7 +76,11 @@ const items = {
     </g>`;
   },
 
-  tub(x, y, { w = 150, h = 140, color = "#2f6f9f", lid = "#e9e6dc", name = ["GREEK", "YOGURT"], sub }) {
+  tub(
+    x,
+    y,
+    { w = 150, h = 140, color = "#2f6f9f", lid = "#e9e6dc", name = ["GREEK", "YOGURT"], sub },
+  ) {
     const top = y - h;
     const lines = sub ? [...name, sub] : name;
     return `<g>
@@ -109,7 +113,11 @@ const items = {
     return `${out}</g>`;
   },
 
-  block(x, y, { w = 140, h = 78, color = "#f2a93b", wrap = "#ffffff", name = ["CHEDDAR"], fg = "#2b2a26" }) {
+  block(
+    x,
+    y,
+    { w = 140, h = 78, color = "#f2a93b", wrap = "#ffffff", name = ["CHEDDAR"], fg = "#2b2a26" },
+  ) {
     return `<g>
       <rect x="${x}" y="${y - h}" width="${w}" height="${h}" rx="7" fill="${color}"/>
       <rect x="${x}" y="${y - h}" width="${w}" height="12" rx="6" fill="#fff" opacity="0.25"/>
@@ -218,7 +226,8 @@ const items = {
       } else {
         contents += `<circle cx="${cx}" cy="${cy}" r="${palette.r}" fill="${fill}"/>
           <circle cx="${cx - palette.r / 3}" cy="${cy - palette.r / 3}" r="${palette.r / 4}" fill="#fff" opacity="0.5"/>`;
-        if (kind === "tomato") contents += `<circle cx="${cx + 2}" cy="${cy - palette.r + 3}" r="3.5" fill="#3d7a35"/>`;
+        if (kind === "tomato")
+          contents += `<circle cx="${cx + 2}" cy="${cy - palette.r + 3}" r="3.5" fill="#3d7a35"/>`;
       }
     }
     return `<g>
@@ -274,7 +283,11 @@ const items = {
   },
 
   /** A stack of flatbreads in a sleeve, seen from the side. */
-  stack(x, y, { w = 190, h = 70, color = "#ecd9ae", name = ["FLOUR", "TORTILLAS"], band = "#c4472d" }) {
+  stack(
+    x,
+    y,
+    { w = 190, h = 70, color = "#ecd9ae", name = ["FLOUR", "TORTILLAS"], band = "#c4472d" },
+  ) {
     let out = "<g>";
     const layers = Math.floor(h / 9);
     for (let i = 0; i < layers; i++) {
@@ -383,10 +396,16 @@ const items = {
       for (let i = 0; i < count; i++) {
         const cx = x + 6 + random() * (w - 12);
         const cy = y - h + 14 + random() * (h * 0.52);
-        const r = kind === "kale" ? 17 + random() * 9 : kind === "basil" ? 13 + random() * 5 : 8 + random() * 5;
+        const r =
+          kind === "kale"
+            ? 17 + random() * 9
+            : kind === "basil"
+              ? 13 + random() * 5
+              : 8 + random() * 5;
         out += `<ellipse cx="${cx}" cy="${cy}" rx="${r}" ry="${r * (kind === "basil" ? 0.62 : 0.85)}" transform="rotate(${random() * 180} ${cx} ${cy})" fill="${shade(leaf, (random() - 0.5) * 0.36)}"/>`;
       }
-      if (kind !== "basil") out += `<rect x="${x + w / 2 - 22}" y="${y - 46}" width="44" height="12" rx="4" fill="#d9c7a0"/>`;
+      if (kind !== "basil")
+        out += `<rect x="${x + w / 2 - 22}" y="${y - 46}" width="44" height="12" rx="4" fill="#d9c7a0"/>`;
     }
     return `${out}</g>`;
   },
@@ -407,7 +426,9 @@ const DRAWER = { top: 1020, bottom: 1380 };
 const DOOR = { left: 872, right: 1150, bins: [470, 820, 1170] };
 
 function drawItems(list, originX, baseline) {
-  return list.map(([kind, dx, options = {}, dy = 0]) => items[kind](originX + dx, baseline + dy, options)).join("");
+  return list
+    .map(([kind, dx, options = {}, dy = 0]) => items[kind](originX + dx, baseline + dy, options))
+    .join("");
 }
 
 function fridge(scene) {
@@ -517,11 +538,42 @@ const scenes = {
         ["eggs", 380, { count: 12 }],
       ],
       [
-        ["block", 24, { name: ["TOFU", "EXTRA FIRM"], color: "#f1ead9", wrap: "#2f8f5b", fg: "#ffffff", w: 172, h: 92 }],
-        ["block", 44, { name: ["TOFU", "EXTRA FIRM"], color: "#f1ead9", wrap: "#2f8f5b", fg: "#ffffff", w: 172, h: 92 }, -92],
-        ["block", 226, { name: ["FETA"], color: "#fbfaf4", wrap: "#2c5fa8", fg: "#ffffff", w: 140, h: 76 }],
+        [
+          "block",
+          24,
+          {
+            name: ["TOFU", "EXTRA FIRM"],
+            color: "#f1ead9",
+            wrap: "#2f8f5b",
+            fg: "#ffffff",
+            w: 172,
+            h: 92,
+          },
+        ],
+        [
+          "block",
+          44,
+          {
+            name: ["TOFU", "EXTRA FIRM"],
+            color: "#f1ead9",
+            wrap: "#2f8f5b",
+            fg: "#ffffff",
+            w: 172,
+            h: 92,
+          },
+          -92,
+        ],
+        [
+          "block",
+          226,
+          { name: ["FETA"], color: "#fbfaf4", wrap: "#2c5fa8", fg: "#ffffff", w: 140, h: 76 },
+        ],
         ["wedge", 392, { w: 136, h: 90 }],
-        ["stack", 552, { name: ["PITA", "BREAD"], w: 160, h: 62, band: "#3f6b3a", color: "#e6cf9e" }],
+        [
+          "stack",
+          552,
+          { name: ["PITA", "BREAD"], w: 160, h: 62, band: "#3f6b3a", color: "#e6cf9e" },
+        ],
       ],
       [
         ["bag", 22, { kind: "spinach", name: ["BABY", "SPINACH"], w: 170, h: 206 }],
@@ -555,14 +607,26 @@ const scenes = {
   catch: {
     shelves: [
       [
-        ["tub", 28, { name: ["COTTAGE", "CHEESE"], sub: "16 OZ", color: "#2c8f84", w: 170, h: 158 }],
+        [
+          "tub",
+          28,
+          { name: ["COTTAGE", "CHEESE"], sub: "16 OZ", color: "#2c8f84", w: 170, h: 158 },
+        ],
         ["eggs", 250, { count: 6, slots: 6 }],
         ["flatpack", 440, { w: 250, h: 74 }],
       ],
       [
         ["tray", 24, { kind: "salmon", name: ["SALMON", "FILLETS"], w: 282, h: 120 }],
-        ["bag", 328, { kind: "shrimp", name: ["SHRIMP", "12 OZ"], color: "#2a6ea3", w: 180, h: 196 }],
-        ["stack", 534, { name: ["CORN", "TORTILLAS"], w: 172, h: 92, color: "#f0d778", band: "#2f6b3a" }],
+        [
+          "bag",
+          328,
+          { kind: "shrimp", name: ["SHRIMP", "12 OZ"], color: "#2a6ea3", w: 180, h: 196 },
+        ],
+        [
+          "stack",
+          534,
+          { name: ["CORN", "TORTILLAS"], w: 172, h: 92, color: "#f0d778", band: "#2f6b3a" },
+        ],
       ],
       [
         ["bag", 22, { kind: "spinach", name: ["BABY", "SPINACH"], w: 170, h: 206 }],

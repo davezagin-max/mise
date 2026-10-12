@@ -95,7 +95,11 @@ export function RecipeCard({
   return (
     <article className="flex flex-col gap-5">
       {onBack && (
-        <button type="button" onClick={onBack} className={`${button.quiet} -ml-2 self-start lg:hidden`}>
+        <button
+          type="button"
+          onClick={onBack}
+          className={`${button.quiet} -ml-2 self-start lg:hidden`}
+        >
           <BackIcon />
           Back to the week
         </button>

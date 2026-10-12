@@ -1,11 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { POST } from "@/app/api/nutrition/route";
-import {
-  EXTRA_KEY,
-  createExtraStore,
-  plausible,
-  type FdcFoodData,
-} from "@/lib/nutrition/extra";
+import { EXTRA_KEY, createExtraStore, plausible, type FdcFoodData } from "@/lib/nutrition/extra";
 import { createCache, lookupFdc, macrosFromFdc, searchFdc } from "@/lib/nutrition/fdc.mjs";
 import { resolve } from "@/lib/nutrition/macros";
 import { matchFood, setExtraFoods } from "@/lib/nutrition/match";

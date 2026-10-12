@@ -175,9 +175,7 @@ describe("runPlan (fake client)", () => {
   it("stops making model calls once the visitor has gone", async () => {
     const controller = new AbortController();
     // The first draft needs a revision, but the visitor cancels while it is being checked.
-    const { client, create } = fakeClient([reply(slow()), reply(good())], () =>
-      controller.abort(),
-    );
+    const { client, create } = fakeClient([reply(slow()), reply(good())], () => controller.abort());
     await expect(runPlan({ client, pantry, prefs, signal: controller.signal })).rejects.toThrow(
       "cancelled",
     );

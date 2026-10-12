@@ -28,10 +28,7 @@ export const PlanBody = z.object({
     diet: z.enum(DIETS),
     maxMinutes: z.number().int().min(10).max(180),
     servings: z.number().int().min(PREF_LIMITS.servings.min).max(PREF_LIMITS.servings.max),
-    proteinTarget: z
-      .number()
-      .min(PREF_LIMITS.proteinTarget.min)
-      .max(PREF_LIMITS.proteinTarget.max),
+    proteinTarget: z.number().min(PREF_LIMITS.proteinTarget.min).max(PREF_LIMITS.proteinTarget.max),
   }),
 });
 export type PlanBodyData = z.infer<typeof PlanBody>;

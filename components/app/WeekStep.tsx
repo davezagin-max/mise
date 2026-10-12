@@ -58,10 +58,7 @@ function ProteinBar({
           className={`h-full rounded-xs ${ok ? "bg-accent" : "bg-warn"}`}
           style={{ width: percent(protein) }}
         />
-        <div
-          className="absolute -top-1 -bottom-1 w-0.5 bg-fg"
-          style={{ left: percent(target) }}
-        />
+        <div className="absolute -top-1 -bottom-1 w-0.5 bg-fg" style={{ left: percent(target) }} />
       </div>
     </div>
   );
@@ -290,14 +287,20 @@ export function WeekStep({
             <h2 id="days-title" className="font-display text-2xl">
               The week
             </h2>
-            <ul className="flex flex-wrap gap-x-3 text-xs text-muted" aria-label="Energy bar legend">
+            <ul
+              className="flex flex-wrap gap-x-3 text-xs text-muted"
+              aria-label="Energy bar legend"
+            >
               {[
                 ["Protein", "bg-accent"],
                 ["Carbs", "bg-wheat"],
                 ["Fat", "bg-clay"],
               ].map(([name, color]) => (
                 <li key={name} className="inline-flex items-center gap-1">
-                  <span className={`inline-block size-2.5 rounded-xs ${color}`} aria-hidden="true" />
+                  <span
+                    className={`inline-block size-2.5 rounded-xs ${color}`}
+                    aria-hidden="true"
+                  />
                   {name}
                 </li>
               ))}
@@ -366,8 +369,8 @@ export function WeekStep({
                 <EnergySplit macros={average} />
                 <p className="text-xs text-muted">
                   The mean of the seven days above. Each day is one serving of each of its three
-                  meals, added up from{" "}
-                  <span className="num">{report.coverage.counted}</span> ingredient lines.
+                  meals, added up from <span className="num">{report.coverage.counted}</span>{" "}
+                  ingredient lines.
                 </p>
               </li>
             )}

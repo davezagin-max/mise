@@ -143,8 +143,7 @@ export interface Measures {
 export type GramFailure = "bad-quantity" | "unknown-unit" | "no-density" | "no-piece-weight";
 
 export type GramResult =
-  | { ok: true; grams: number; via: UnitKind }
-  | { ok: false; reason: GramFailure };
+  { ok: true; grams: number; via: UnitKind } | { ok: false; reason: GramFailure };
 
 /**
  * Converts a quantity to grams.

@@ -89,7 +89,9 @@ describe("summarizeChecks", () => {
   });
 
   it("names what each diet excludes", () => {
-    const fish = recipe("fish", { ingredients: [{ name: "cod", quantity: 400, unit: "g", prep: "" }] });
+    const fish = recipe("fish", {
+      ingredients: [{ name: "cod", quantity: 400, unit: "g", prep: "" }],
+    });
     const q = plan([fish], week("fish", "fish", "fish"));
     const settings = prefs({ diet: "pescatarian" });
     const diet = summarizeChecks(q, checkPlan(q, settings, []), settings).find(

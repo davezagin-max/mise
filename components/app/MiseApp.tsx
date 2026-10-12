@@ -152,8 +152,7 @@ export function MiseApp({ flags }: { flags: SampleFlags }) {
     return session.plan ? checkPlan(session.plan.plan, session.prefs, session.items) : null;
   }, [session.plan, session.prefs, session.items, extras]);
   const checks = useMemo(
-    () =>
-      session.plan && report ? summarizeChecks(session.plan.plan, report, session.prefs) : [],
+    () => (session.plan && report ? summarizeChecks(session.plan.plan, report, session.prefs) : []),
     [session.plan, report, session.prefs],
   );
   const groceries = useMemo(() => {
@@ -191,7 +190,12 @@ export function MiseApp({ flags }: { flags: SampleFlags }) {
       return;
     }
     setPhotoUrl(null);
-    sessionStore.dispatch({ type: "scanned", sampleId: id, result: response.data, meta: response.meta });
+    sessionStore.dispatch({
+      type: "scanned",
+      sampleId: id,
+      result: response.data,
+      meta: response.meta,
+    });
   }
 
   async function scanPhoto(file: File) {

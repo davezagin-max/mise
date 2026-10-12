@@ -176,15 +176,18 @@ describe("ordering and notes", () => {
   });
 
   it("warns when something will not keep until the day it is cooked", () => {
-    const late = plan([oats, stir, eggsOnToast], [
-      ["oats", "eggs", "eggs"],
-      ["oats", "eggs", "eggs"],
-      ["oats", "eggs", "eggs"],
-      ["oats", "eggs", "eggs"],
-      ["oats", "eggs", "stir"],
-      ["oats", "stir", "eggs"],
-      ["oats", "eggs", "eggs"],
-    ]);
+    const late = plan(
+      [oats, stir, eggsOnToast],
+      [
+        ["oats", "eggs", "eggs"],
+        ["oats", "eggs", "eggs"],
+        ["oats", "eggs", "eggs"],
+        ["oats", "eggs", "eggs"],
+        ["oats", "eggs", "stir"],
+        ["oats", "stir", "eggs"],
+        ["oats", "eggs", "eggs"],
+      ],
+    );
     const list = buildGroceryList(late, { servings: 2 }, []);
     const chicken = find(list, "chicken-breast")!;
     expect(chicken).toMatchObject({ perishable: true, keeps: 2, firstDay: 5, lastDay: 5 });

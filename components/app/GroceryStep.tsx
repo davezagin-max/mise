@@ -201,8 +201,8 @@ export function GroceryStep({
               Use these first
             </h2>
             <p className="mt-1 text-xs text-muted">
-              Fresh food you already have, most urgent first, with the day the plan cooks it.
-              Shelf life is a typical figure and assumes the food is fresh today.
+              Fresh food you already have, most urgent first, with the day the plan cooks it. Shelf
+              life is a typical figure and assumes the food is fresh today.
             </p>
             <ol className="mt-3 flex flex-col">
               {report.perishables.map((use) => (

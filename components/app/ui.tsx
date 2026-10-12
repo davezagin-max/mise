@@ -189,7 +189,9 @@ export function Notice({
       role={tone === "bad" ? "alert" : "status"}
       className={`rise flex flex-col gap-2 rounded-lg border p-4 text-sm ${tones[tone]}`}
     >
-      <p className={`font-semibold ${tone === "bad" ? "text-danger" : tone === "warn" ? "text-warn" : ""}`}>
+      <p
+        className={`font-semibold ${tone === "bad" ? "text-danger" : tone === "warn" ? "text-warn" : ""}`}
+      >
         {title}
       </p>
       {children ? <div className="text-fg/90">{children}</div> : null}

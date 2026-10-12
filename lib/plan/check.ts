@@ -327,10 +327,7 @@ export function checkPlan(plan: MealPlan, prefs: Prefs, pantry: Quantity[]): Pla
     }
   }
 
-  if (
-    report.coverage.total > 0 &&
-    report.coverage.counted / report.coverage.total < MIN_COVERAGE
-  ) {
+  if (report.coverage.total > 0 && report.coverage.counted / report.coverage.total < MIN_COVERAGE) {
     report.warnings.push({
       code: "low-coverage",
       message: `Only ${report.coverage.counted} of ${report.coverage.total} ingredients are in the nutrition data, so the totals understate the plan.`,
@@ -352,7 +349,13 @@ export function checkPlan(plan: MealPlan, prefs: Prefs, pantry: Quantity[]): Pla
       .filter((day): day is number => day !== undefined);
     const firstDay = days.length > 0 ? Math.min(...days) : null;
     const status = firstDay === null ? "unused" : firstDay > food.keeps ? "late" : "ok";
-    report.perishables.push({ foodId: food.id, name: food.name, keeps: food.keeps, firstDay, status });
+    report.perishables.push({
+      foodId: food.id,
+      name: food.name,
+      keeps: food.keeps,
+      firstDay,
+      status,
+    });
     if (status === "late") {
       report.warnings.push({
         code: "late-perishable",

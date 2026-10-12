@@ -43,7 +43,8 @@ for (const food of data.foods) {
     continue;
   }
   matched += 1;
-  const drift = food.kcal > 0 ? Math.abs(found.kcal - food.kcal) / food.kcal : found.kcal > 5 ? 1 : 0;
+  const drift =
+    food.kcal > 0 ? Math.abs(found.kcal - food.kcal) / food.kcal : found.kcal > 5 ? 1 : 0;
   const mark = drift > 0.15 ? "CHECK " : "ok    ";
   if (drift > 0.15) flagged += 1;
   console.log(

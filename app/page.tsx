@@ -41,7 +41,8 @@ export default function Home() {
       <footer className="mt-8 border-t border-border px-4 py-5 text-xs text-muted">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2">
           <p>
-            Nutrition figures are estimates from a bundled reference table ({NUTRITION_META.compiled}
+            Nutrition figures are estimates from a bundled reference table (
+            {NUTRITION_META.compiled}
             ), not dietary or medical advice. Shelf-life days are typical values for ordering, not a
             food-safety guarantee: check your food.
           </p>

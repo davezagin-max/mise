@@ -63,7 +63,9 @@ export function wireSchemaProblems(schema: unknown, path = "$"): string[] {
   }
   for (const [key, value] of Object.entries(node)) {
     if (Array.isArray(value)) {
-      value.forEach((item, i) => problems.push(...wireSchemaProblems(item, `${path}.${key}[${i}]`)));
+      value.forEach((item, i) =>
+        problems.push(...wireSchemaProblems(item, `${path}.${key}[${i}]`)),
+      );
     } else if (value && typeof value === "object") {
       problems.push(...wireSchemaProblems(value, `${path}.${key}`));
     }

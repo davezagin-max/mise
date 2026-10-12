@@ -135,9 +135,7 @@ describe("runScan (fake client)", () => {
     expect(request.model).toBe("claude-opus-5-5");
     expect(request.thinking).toEqual({ type: "adaptive" });
     expect((request.output_config as { effort: string }).effort).toBe("medium");
-    expect((request.output_config as { format: { type: string } }).format.type).toBe(
-      "json_schema",
-    );
+    expect((request.output_config as { format: { type: string } }).format.type).toBe("json_schema");
     expect(request).not.toHaveProperty("tool_choice");
     expect(request).not.toHaveProperty("tools");
     expect(JSON.stringify(request)).not.toContain("budget_tokens");

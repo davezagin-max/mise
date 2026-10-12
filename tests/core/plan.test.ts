@@ -37,15 +37,18 @@ const good = () => plan([oats, chicken, salad], week("oats", "salad", "chicken")
 
 describe("cookEvents", () => {
   it("treats repeats within three days as leftovers and later ones as a new cook", () => {
-    const p = plan([oats, chicken, salad], [
-      ["oats", "salad", "chicken"],
-      ["oats", "chicken", "salad"],
-      ["oats", "salad", "salad"],
-      ["oats", "salad", "chicken"],
-      ["oats", "chicken", "salad"],
-      ["oats", "salad", "salad"],
-      ["oats", "salad", "chicken"],
-    ]);
+    const p = plan(
+      [oats, chicken, salad],
+      [
+        ["oats", "salad", "chicken"],
+        ["oats", "chicken", "salad"],
+        ["oats", "salad", "salad"],
+        ["oats", "salad", "chicken"],
+        ["oats", "chicken", "salad"],
+        ["oats", "salad", "salad"],
+        ["oats", "salad", "chicken"],
+      ],
+    );
     const events = cookEvents(p).filter((event) => event.recipeId === "chicken");
     // Days 1, 2, 4 share one cook (4 - 1 = 3). Day 5 is four days out: a second cook.
     expect(events.map((event) => event.day)).toEqual([1, 5]);
@@ -88,15 +91,18 @@ describe("cookEvents", () => {
   });
 
   it("describes cook days in one line", () => {
-    const p = plan([oats, chicken, salad], [
-      ["oats", "salad", "chicken"],
-      ["oats", "chicken", "salad"],
-      ["oats", "salad", "salad"],
-      ["oats", "salad", "salad"],
-      ["oats", "salad", "salad"],
-      ["oats", "salad", "chicken"],
-      ["oats", "salad", "salad"],
-    ]);
+    const p = plan(
+      [oats, chicken, salad],
+      [
+        ["oats", "salad", "chicken"],
+        ["oats", "chicken", "salad"],
+        ["oats", "salad", "salad"],
+        ["oats", "salad", "salad"],
+        ["oats", "salad", "salad"],
+        ["oats", "salad", "chicken"],
+        ["oats", "salad", "salad"],
+      ],
+    );
     const of = (id: string) => cookEvents(p).filter((event) => event.recipeId === id);
     expect(describeEvents(of("chicken"))).toBe("Cook on day 1, eat through day 2. Cook on day 6");
     // The salad takes 10 minutes, so it is made on each of its days.
@@ -283,15 +289,18 @@ describe("checkPlan: perishables", () => {
   });
 
   it("warns when a perishable is first cooked after it would have spoiled", () => {
-    const late = plan([oats, chicken, salad], [
-      ["oats", "salad", "salad"],
-      ["oats", "salad", "salad"],
-      ["oats", "salad", "chicken"],
-      ["oats", "chicken", "salad"],
-      ["oats", "salad", "salad"],
-      ["oats", "salad", "salad"],
-      ["oats", "salad", "salad"],
-    ]);
+    const late = plan(
+      [oats, chicken, salad],
+      [
+        ["oats", "salad", "salad"],
+        ["oats", "salad", "salad"],
+        ["oats", "salad", "chicken"],
+        ["oats", "chicken", "salad"],
+        ["oats", "salad", "salad"],
+        ["oats", "salad", "salad"],
+        ["oats", "salad", "salad"],
+      ],
+    );
     const report = checkPlan(late, prefs(), pantry);
     const chickenUse = report.perishables.find((use) => use.foodId === "chicken-breast")!;
     expect(chickenUse).toMatchObject({ firstDay: 3, status: "late" });

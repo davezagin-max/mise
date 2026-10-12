@@ -98,7 +98,9 @@ async function run(browser, name, viewport, sampleTitle) {
   await page.locator("input[inputmode='decimal']").first().fill("750");
   await page.click("button:has-text('Save')");
   await page.click("text=Add something the scan missed");
-  await page.locator("input[placeholder='e.g. red lentils']").fill("a very long ingredient name that should wrap not overflow");
+  await page
+    .locator("input[placeholder='e.g. red lentils']")
+    .fill("a very long ingredient name that should wrap not overflow");
   await page.click("button:has-text('Add to the list')");
   await noSideScroll(page, `${name} confirm after editing`);
   await shot(page, `${name}-2-confirm`);
@@ -176,7 +178,9 @@ async function run(browser, name, viewport, sampleTitle) {
   }
   await context.setOffline(false);
 
-  const real = errors.filter((text) => !/Failed to load resource|ERR_INTERNET_DISCONNECTED/.test(text));
+  const real = errors.filter(
+    (text) => !/Failed to load resource|ERR_INTERNET_DISCONNECTED/.test(text),
+  );
   check(real.length === 0, `${name}: no console errors${real.length ? `: ${real[0]}` : ""}`);
   await context.close();
 }

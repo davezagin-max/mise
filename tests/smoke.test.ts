@@ -20,7 +20,11 @@ let caller = 0;
 const post = (url: string, body: unknown, headers: Record<string, string> = {}) =>
   new Request(`http://localhost${url}`, {
     method: "POST",
-    headers: { "content-type": "application/json", "x-forwarded-for": `10.0.0.${++caller}`, ...headers },
+    headers: {
+      "content-type": "application/json",
+      "x-forwarded-for": `10.0.0.${++caller}`,
+      ...headers,
+    },
     body: JSON.stringify(body),
   });
 
@@ -67,7 +71,9 @@ describe("demo mode: edges", () => {
   const jpeg = btoa(String.fromCharCode(0xff, 0xd8, 0xff, 0xe0, ...Array(20).fill(0)));
 
   it("explains that a visitor's own photo needs a key", async () => {
-    const res = await scanRoute(post("/api/scan", { image: { mediaType: "image/jpeg", data: jpeg } }));
+    const res = await scanRoute(
+      post("/api/scan", { image: { mediaType: "image/jpeg", data: jpeg } }),
+    );
     const json = (await res.json()) as ApiResponse<ScanResult>;
     expect(res.status).toBe(404);
     expect(json.ok === false && json.error.kind).toBe("demo_miss");

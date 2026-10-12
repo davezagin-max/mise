@@ -13,7 +13,9 @@ describe("bundled nutrition data", () => {
     expect(NUTRITION_META.provenance.toLowerCase()).toContain("hand-entered");
     expect(typeof NUTRITION_META.verifiedAgainstFdc).toBe("boolean");
     if (!NUTRITION_META.verifiedAgainstFdc) {
-      expect(NUTRITION_META.provenance).toMatch(/NOT pulled from the FDC API|keep their hand-entered/);
+      expect(NUTRITION_META.provenance).toMatch(
+        /NOT pulled from the FDC API|keep their hand-entered/,
+      );
     }
   });
 
