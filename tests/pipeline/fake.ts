@@ -7,7 +7,8 @@ type Params = Record<string, unknown>;
 /** A stand-in client that returns queued responses and records each request. */
 export function fakeClient(responses: object[], onCall?: (index: number) => void) {
   const requests: Params[] = [];
-  const create = vi.fn(async (params: Params) => {
+  const create = vi.fn(async (params: Params, options?: { signal?: AbortSignal }) => {
+    void options;
     // Snapshot: the helper keeps appending to the same history array.
     requests.push(structuredClone(params));
     const next = responses.shift();
