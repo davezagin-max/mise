@@ -3,13 +3,14 @@
  *
  * - Page loads: network first, falling back to the cached page, so a deploy is
  *   picked up at once but the app still opens in a shop with no signal.
- * - Hashed build files, fonts, icons and sample pictures: cache first (their
- *   names change when their contents do). The nutrition table is compiled into
- *   those build files, so it is cached with them.
+ * - Hashed build files, fonts, icons and sample pictures (including the resized
+ *   copies the image optimiser serves): cache first, since their URLs change
+ *   when their contents do. The nutrition table is compiled into those build
+ *   files, so it is cached with them.
  * - API calls are never cached or intercepted. A plan the visitor already has
  *   is kept in localStorage by the page itself.
  */
-const VERSION = "mise-v1";
+const VERSION = "mise-v2";
 const SHELL = ["/", "/manifest.webmanifest", "/icons/icon-192.png", "/icons/icon-512.png"];
 
 self.addEventListener("install", (event) => {
@@ -33,6 +34,7 @@ self.addEventListener("activate", (event) => {
 function isStatic(url) {
   return (
     url.pathname.startsWith("/_next/static/") ||
+    url.pathname === "/_next/image" ||
     url.pathname.startsWith("/icons/") ||
     url.pathname.startsWith("/samples/") ||
     url.pathname === "/manifest.webmanifest" ||

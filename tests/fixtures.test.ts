@@ -77,16 +77,16 @@ describe.each(Object.entries(scans))("scan fixture %s", (_key, fixture) => {
 
   it("is a usable ingredient list", () => {
     const { items, summary } = fixture.data;
-    expect(items.length).toBeGreaterThanOrEqual(5);
-    expect(summary.length).toBeGreaterThan(10);
-    // Most of what a fridge holds should be food the nutrition data knows.
+    expect(items.length).toBeGreaterThan(0);
+    expect(summary.length).toBeGreaterThan(0);
+    if (!fixture.placeholder) return; // A recorded scan is kept as the model returned it.
+    // A hand-written sample has to be a good one: mostly foods the nutrition data
+    // knows, only real units, and all three confidence levels on show.
+    expect(items.length).toBeGreaterThanOrEqual(12);
     const known = items.filter((item) => resolve(item).status !== "unmatched");
-    expect(known.length / items.length).toBeGreaterThanOrEqual(0.8);
-    if (fixture.placeholder) {
-      // The hand-written samples use only real units, and show all three confidence levels.
-      for (const item of items) expect(parseUnit(item.unit), item.name).not.toBeNull();
-      expect(new Set(items.map((item) => item.confidence)).size).toBe(3);
-    }
+    expect(known.length).toBe(items.length);
+    for (const item of items) expect(parseUnit(item.unit), item.name).not.toBeNull();
+    expect(new Set(items.map((item) => item.confidence)).size).toBe(3);
   });
 });
 
@@ -108,10 +108,6 @@ describe.each(Object.entries(plans))("plan fixture %s", (key, fixture) => {
     for (const recipe of plan.recipes) {
       expect(recipe.minutes, recipe.title).toBeLessThanOrEqual(sample.prefs.maxMinutes);
     }
-    for (const day of report.days) {
-      expect(day.macros.kcal, `day ${day.day}`).toBeGreaterThan(1000);
-      expect(day.macros.kcal, `day ${day.day}`).toBeLessThan(3500);
-    }
   });
 
   it("is a sample worth showing", () => {
@@ -121,14 +117,19 @@ describe.each(Object.entries(plans))("plan fixture %s", (key, fixture) => {
     expect(report.coverage.counted).toBe(report.coverage.total);
     expect(report.perishables.every((use) => use.status === "ok")).toBe(true);
     expect(report.pantry.used).toBe(report.pantry.total);
+    for (const day of report.days) {
+      expect(day.macros.kcal, `day ${day.day}`).toBeGreaterThan(1200);
+      expect(day.macros.kcal, `day ${day.day}`).toBeLessThan(2600);
+    }
   });
 
-  it("produces a grocery list with things to buy and things already covered", () => {
+  it("produces a grocery list", () => {
     const list = buildGroceryList(plan, sample.prefs, pantry);
-    expect(list.buyCount).toBeGreaterThan(5);
-    expect(list.covered.length).toBeGreaterThan(0);
     for (const group of list.groups) {
       for (const item of group.items) expect(item.amount, item.name).not.toBe("");
     }
+    if (!fixture.placeholder) return;
+    expect(list.buyCount).toBeGreaterThan(5);
+    expect(list.covered.length).toBeGreaterThan(5);
   });
 });

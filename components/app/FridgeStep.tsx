@@ -93,9 +93,10 @@ export function FridgeStep({
                     className="group flex h-full w-full flex-col overflow-hidden rounded-lg border border-border bg-surface text-left transition-colors hover:border-accent disabled:cursor-wait"
                   >
                     <span className="relative block aspect-[4/5] w-full overflow-hidden bg-sunk">
+                      {/* Decorative here: the button is named by the title beside it. */}
                       <Image
                         src={sample.image}
-                        alt={sample.alt}
+                        alt=""
                         width={1200}
                         height={1500}
                         sizes="(min-width: 1024px) 230px, 33vw"
