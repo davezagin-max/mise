@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, type FormEvent, type ReactNode, type RefObject } from "react";
 import { CostMeter } from "@/components/kit/CostMeter";
-import { sourceLabel, sourceNote } from "@/lib/labels";
+import { originOf, planNarration, sourceLabel, sourceNote } from "@/lib/labels";
 import { resolve } from "@/lib/nutrition/macros";
 import { sampleById } from "@/lib/samples";
 import type { PantryEntry, Session } from "@/lib/session";
@@ -55,7 +55,10 @@ const field =
 function matchLine(item: Quantity): { text: string; known: boolean } | null {
   const resolved = resolve(item);
   if (resolved.status === "unmatched") {
-    return { text: "Not in the nutrition data: it will not count toward macros.", known: false };
+    return {
+      text: "Not in the nutrition data: it will not count toward the nutrition totals.",
+      known: false,
+    };
   }
   if (resolved.status === "unconvertible") {
     return {
@@ -382,9 +385,7 @@ export function ConfirmStep({
       {planning ? (
         <div className="flex items-center gap-3">
           <p role="status" className="pulse-soft text-sm font-medium">
-            {isLive
-              ? "Claude Opus 5.5 is drafting the week. The app checks it when it arrives."
-              : "Loading the plan..."}
+            {planNarration(originOf(isLive, planIsPlaceholder))}
           </p>
           <button type="button" onClick={onCancel} className={`${button.secondary} shrink-0`}>
             Cancel
@@ -438,7 +439,8 @@ export function ConfirmStep({
     <div className="flex flex-col gap-1.5 text-xs text-muted">
       <p className="font-semibold text-fg">{sourceLabel(session.scanMeta, "scan")}</p>
       <p>{sourceNote(session.scanMeta, "scan")}</p>
-      <CostMeter meta={session.scanMeta} />
+      {/* A hand-written sample cost nothing, so there is no meter to show. */}
+      {!session.scanMeta.placeholder && <CostMeter meta={session.scanMeta} />}
     </div>
   );
 
@@ -453,7 +455,7 @@ export function ConfirmStep({
 
       <div className="flex min-w-0 flex-col gap-8">
         <section aria-labelledby="confirm-title" className="flex flex-col gap-3">
-          <Eyebrow>Confirm</Eyebrow>
+          <Eyebrow>Step 2 of 4 · Check the list</Eyebrow>
           <h1
             ref={headingRef}
             id="confirm-title"
@@ -473,7 +475,8 @@ export function ConfirmStep({
                 , <span className="num font-semibold">{unsure}</span> worth a second look
               </>
             )}
-            . Fix anything that is wrong: the grocery list subtracts exactly what is here.
+            . Fix anything that is wrong: the grocery list subtracts exactly what is here. The tag
+            on each row says how sure the photo reading was.
           </p>
 
           {session.items.length === 0 ? (
@@ -530,8 +533,8 @@ export function ConfirmStep({
           Pinned to the bottom of the screen at every size, so the next step never needs a scroll.
           A failed plan is reported here too, next to the button that was pressed.
         */}
-        <div className="fixed inset-x-0 bottom-0 z-20 max-h-[70dvh] overflow-y-auto border-t border-border bg-bg px-4 py-3">
-          <div className="mx-auto flex w-full max-w-6xl flex-col gap-3">
+        <div className="fixed inset-x-0 bottom-0 z-20 max-h-[70dvh] overflow-y-auto border-t border-border bg-bg py-3">
+          <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-4">
             {notice}
             {cta}
           </div>

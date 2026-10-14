@@ -1,6 +1,14 @@
 import { describe, expect, it } from "vitest";
 import { fitScale } from "@/lib/image-client";
-import { sampleHint, sourceLabel, sourceNote } from "@/lib/labels";
+import {
+  originOf,
+  planNarration,
+  sampleHint,
+  samplesNote,
+  scanNarration,
+  sourceLabel,
+  sourceNote,
+} from "@/lib/labels";
 import { checkPlan } from "@/lib/plan/check";
 import { summarizeChecks } from "@/lib/plan/summary";
 import { plan, prefs, recipe, week } from "./helpers";
@@ -37,6 +45,36 @@ describe("where a result came from", () => {
     expect(sourceLabel(live, "scan")).toBe("Live ingredient list from Claude Opus 5.5");
     expect(sourceNote({ ...live, model: "claude-opus-5" }, "plan")).toContain("claude-opus-5 ");
     expect(sourceNote(live, "plan")).toContain("computed by the app");
+  });
+});
+
+describe("first-screen and loading wording", () => {
+  it("picks the origin from the key and the fixture's own flag", () => {
+    expect(originOf(true, true)).toBe("live");
+    expect(originOf(false, true)).toBe("placeholder");
+    expect(originOf(false, false)).toBe("recorded");
+  });
+
+  it("never narrates a hand-written sample as Claude at work", () => {
+    for (const text of [scanNarration("placeholder"), planNarration("placeholder")]) {
+      expect(text).toContain("pre-written");
+      expect(text).not.toMatch(/claude|recorded|replay/i);
+    }
+    expect(scanNarration("recorded")).toMatch(/^Replaying Claude's recorded/);
+    expect(planNarration("recorded")).toMatch(/^Replaying Claude's recorded/);
+    expect(scanNarration("live")).toMatch(/^Claude is looking at the photo/);
+    expect(planNarration("live")).toMatch(/^Claude is planning seven days/);
+  });
+
+  it("describes the sample fridges by what their fixtures really are", () => {
+    expect(samplesNote([true, true, true])).toContain("they open are pre-written examples");
+    expect(samplesNote([true, true, true])).not.toMatch(/recorded/i);
+    expect(samplesNote([false, false, false])).toContain("replays a recorded Claude Opus 5.5 run");
+    expect(samplesNote([false, false, false])).not.toMatch(/pre-written/);
+    expect(samplesNote([true, false, false])).toContain("Some open pre-written examples");
+    for (const flags of [[true], [false], [true, false]]) {
+      expect(samplesNote(flags)).toContain("drawn illustrations, not photos");
+    }
   });
 });
 

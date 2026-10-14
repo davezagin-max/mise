@@ -83,11 +83,19 @@ function EnergySplit({ macros }: { macros: Macros }) {
           />
         ))}
       </div>
-      <p className="num flex flex-wrap gap-x-3 text-xs text-muted">
-        <span>{whole(macros.kcal)} kcal</span>
-        <span>C {whole(macros.carbs)} g</span>
-        <span>F {whole(macros.fat)} g</span>
-        <span>fibre {whole(macros.fiber)} g</span>
+      <p className="flex flex-wrap gap-x-2.5 text-xs text-muted">
+        <span>
+          <span className="num">{whole(macros.kcal)}</span> kcal
+        </span>
+        <span>
+          carbs <span className="num">{whole(macros.carbs)}</span> g
+        </span>
+        <span>
+          fat <span className="num">{whole(macros.fat)}</span> g
+        </span>
+        <span>
+          fibre <span className="num">{whole(macros.fiber)}</span> g
+        </span>
       </p>
     </div>
   );
@@ -200,7 +208,10 @@ export function WeekStep({
     <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:gap-10">
       <div className={`flex min-w-0 flex-col gap-6 ${selected ? "hidden lg:flex" : ""}`}>
         <header className="flex flex-col gap-2">
-          {session.planMeta && <Eyebrow>{sourceLabel(session.planMeta, "plan")}</Eyebrow>}
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <Eyebrow>Step 3 of 4 · Your week</Eyebrow>
+            {session.planMeta && <Tag>{sourceLabel(session.planMeta, "plan")}</Tag>}
+          </div>
           <h1
             ref={headingRef}
             tabIndex={-1}
@@ -209,6 +220,10 @@ export function WeekStep({
             {plan.title}
           </h1>
           <p className="max-w-prose text-sm sm:text-base">{plan.summary}</p>
+          <p className="max-w-prose text-sm text-muted">
+            Tap any meal to see its recipe. Every number on this page, from calories to the grocery
+            list, is computed by code from a nutrition table, not by the AI.
+          </p>
           {data.attempts > 1 && data.revisedFor.length > 0 && (
             <details className="text-xs text-muted">
               <summary className="cursor-pointer font-medium text-fg">
@@ -251,7 +266,9 @@ export function WeekStep({
             <h2 id="checks-title" className="font-display text-xl">
               Checked by code
             </h2>
-            <p className="text-xs text-muted">Not by the model. Recomputed as you change things.</p>
+            <p className="text-xs text-muted">
+              Not by the AI. Updates as you change people or protein.
+            </p>
           </div>
           <Checks lines={checks} />
           <div className="flex flex-wrap gap-x-8 gap-y-3 border-t border-border pt-4">
@@ -392,7 +409,7 @@ export function WeekStep({
           >
             <p className="font-semibold text-fg">{sourceLabel(session.planMeta, "plan")}</p>
             <p className="max-w-prose">{sourceNote(session.planMeta, "plan")}</p>
-            <CostMeter meta={session.planMeta} />
+            {!session.planMeta.placeholder && <CostMeter meta={session.planMeta} />}
           </section>
         )}
       </div>

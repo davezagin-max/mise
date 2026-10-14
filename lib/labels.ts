@@ -47,3 +47,42 @@ export function sourceNote(meta: Source, kind: Kind): string {
 export function sampleHint(placeholder: boolean): string {
   return placeholder ? "Sample output, written by hand" : "Recorded Claude Opus 5.5 run";
 }
+
+/** Where the next result will come from, known before the request is sent. */
+export type Origin = "live" | "recorded" | "placeholder";
+
+export function originOf(isLive: boolean, placeholder: boolean): Origin {
+  if (isLive) return "live";
+  return placeholder ? "placeholder" : "recorded";
+}
+
+/** The status line shown while a fridge is being read. */
+export function scanNarration(origin: Origin): string {
+  if (origin === "live")
+    return "Claude is looking at the photo and listing each food it can see...";
+  if (origin === "recorded") return "Replaying Claude's recorded reading of this fridge...";
+  return "Opening this fridge's pre-written ingredient list...";
+}
+
+/** The status line shown while the week is being planned. */
+export function planNarration(origin: Origin): string {
+  if (origin === "live") {
+    return "Claude is planning seven days of meals. Code checks the draft when it arrives...";
+  }
+  if (origin === "recorded") {
+    return "Replaying Claude's recorded week for this fridge. Code then works out the nutrition...";
+  }
+  return "Opening the pre-written week for this fridge. Code then works out the nutrition...";
+}
+
+/** One line under the sample fridges saying what they are and what they open. */
+export function samplesNote(placeholders: boolean[]): string {
+  const drawn = "The sample fridges are drawn illustrations, not photos.";
+  if (placeholders.every(Boolean)) {
+    return `${drawn} The ingredient lists and meal plans they open are pre-written examples.`;
+  }
+  if (!placeholders.some(Boolean)) {
+    return `${drawn} Each one replays a recorded Claude Opus 5.5 run.`;
+  }
+  return `${drawn} Some open pre-written examples; the others replay recorded Claude Opus 5.5 runs.`;
+}

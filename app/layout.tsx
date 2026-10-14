@@ -16,7 +16,7 @@ const display = Young_Serif({
 export const metadata: Metadata = {
   title: "Mise: fridge to meal plan",
   description:
-    "Photograph your fridge and get a week of meals that use what you have, with macros computed from nutrition data and a grocery list.",
+    "Photograph your fridge and get a week of meals that use what you have, with the nutrition computed by code and a grocery list for what is missing.",
   applicationName: "Mise",
   appleWebApp: { capable: true, title: "Mise", statusBarStyle: "default" },
 };

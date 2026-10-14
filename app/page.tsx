@@ -28,18 +28,16 @@ export default function Home() {
   return (
     <>
       <DemoBanner placeholder={anyPlaceholder} />
-      <header className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3">
+      <header className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-2.5">
         <p className="flex items-baseline gap-3">
           <span className="font-display text-2xl leading-none">Mise</span>
-          <span className="hidden text-xs text-muted sm:inline">
-            everything in its place, before you cook
-          </span>
+          <span className="hidden text-sm text-muted sm:inline">fridge photo to meal plan</span>
         </p>
         <ThemeToggle />
       </header>
       <MiseApp flags={flags} />
-      <footer className="mt-8 border-t border-border px-4 py-5 text-xs text-muted">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-2">
+      <footer className="mt-8 border-t border-border py-5 text-xs text-muted">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4">
           <p>
             Nutrition figures are estimates from a bundled reference table (
             {NUTRITION_META.compiled}

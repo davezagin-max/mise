@@ -80,6 +80,18 @@ export const ArrowIcon = (props: IconProps) => (
     <path d="M5 12h14M13 6l6 6-6 6" />
   </Icon>
 );
+export const CalendarIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <rect x="4" y="5.5" width="16" height="14" rx="1.5" />
+    <path d="M4 10h16M8.5 3.5v4M15.5 3.5v4" />
+  </Icon>
+);
+export const CalculatorIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <rect x="5.5" y="3.5" width="13" height="17" rx="1.5" />
+    <path d="M8.5 7.5h7M9 12h.01M12 12h.01M15 12h.01M9 15.5h.01M12 15.5h.01M15 15.5h.01" />
+  </Icon>
+);
 export const LeafIcon = (props: IconProps) => (
   <Icon {...props}>
     <path d="M5 19c0-8 5-13 14-14 0 9-5 14-14 14z" />

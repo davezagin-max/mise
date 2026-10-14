@@ -85,7 +85,7 @@ export function GroceryStep({
     <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-10">
       <div className="flex min-w-0 flex-col gap-6">
         <header className="flex flex-col gap-2">
-          <Eyebrow>Needed minus on hand</Eyebrow>
+          <Eyebrow>Step 4 of 4 · What to buy</Eyebrow>
           <h1
             ref={headingRef}
             tabIndex={-1}

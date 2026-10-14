@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import type { ReactNode, RefObject } from "react";
-import { sampleHint } from "@/lib/labels";
-import { SAMPLES, type SampleId } from "@/lib/samples";
-import { CameraIcon, Eyebrow, button } from "./ui";
+import { originOf, sampleHint, samplesNote, scanNarration } from "@/lib/labels";
+import { SAMPLES, SAMPLE_IDS, type SampleId } from "@/lib/samples";
+import { ArrowIcon, CalendarIcon, CameraIcon, CalculatorIcon, button } from "./ui";
 
 export type SampleFlags = Record<SampleId, { scan: boolean; plan: boolean }>;
 
@@ -21,18 +21,22 @@ interface FridgeStepProps {
   notice: ReactNode;
 }
 
-const FACTS = [
+/** The whole idea in three plain steps, shown on the first screen. */
+const HOW = [
   {
+    icon: CameraIcon,
     title: "Claude reads the photo",
-    body: "Opus 5.5 vision lists what it sees, estimates how much, and says how sure it is. You fix what it got wrong.",
+    body: "It lists each food and roughly how much. You fix any mistakes.",
   },
   {
-    title: "Claude writes the week",
-    body: "Seven days of meals from your diet, cook time, household size and protein target, using what spoils first.",
+    icon: CalendarIcon,
+    title: "Claude plans the week",
+    body: "Seven days of meals for your diet and cook time, using up what spoils first.",
   },
   {
-    title: "Code does the numbers",
-    body: "Macros come from a nutrition table, not the model. The same code checks the diet and builds the grocery list.",
+    icon: CalculatorIcon,
+    title: "Code does the math",
+    body: "Nutrition and the grocery list are worked out from a food table. The AI never makes up a number.",
   },
 ];
 
@@ -52,35 +56,41 @@ export function FridgeStep({
     const file = files?.[0];
     if (file) onPhoto(file);
   };
+  const placeholderFor = (id: SampleId) => flags[id].scan || flags[id].plan;
+  const loadingSample = loading && loading !== "photo" ? loading : null;
 
   return (
-    <div className="flex flex-col gap-8 lg:gap-12">
-      <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-12">
-        <div className="flex flex-col gap-3 lg:gap-5 lg:pt-4">
-          <Eyebrow>Fridge to meal plan</Eyebrow>
+    <div className="flex flex-col gap-10 lg:gap-14">
+      <div className="grid items-start gap-x-12 gap-y-7 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:grid-rows-[auto_1fr]">
+        <div className="flex flex-col gap-3 lg:col-start-1 lg:row-start-1 lg:gap-4 lg:pt-2">
           <h1
             ref={headingRef}
             tabIndex={-1}
-            className="font-display text-[1.9rem] leading-[1.08] outline-none sm:text-5xl lg:text-[3.4rem]"
+            className="font-display text-[1.9rem] leading-[1.08] outline-none sm:text-5xl lg:text-[2.85rem]"
           >
             A week of meals from what is already in your fridge.
           </h1>
-          <p className="max-w-prose text-sm text-muted sm:text-base">
-            Photograph the fridge and get seven days of meals that use it up, with real macros and a
-            grocery list for the gaps.
+          <p className="max-w-prose text-[0.9375rem] text-muted sm:text-lg lg:text-[1.0625rem]">
+            Photograph your fridge and get seven days of meals that use what you have, with
+            nutrition computed by code (not guessed by AI) and a grocery list for what is missing.
           </p>
         </div>
 
-        <section aria-labelledby="samples-title" className="flex min-w-0 flex-col gap-3">
-          <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h2 id="samples-title" className="text-sm font-semibold">
-              Tap a sample fridge to try it
+        <section
+          aria-labelledby="samples-title"
+          className="flex min-w-0 flex-col gap-3 lg:col-start-2 lg:row-span-2 lg:row-start-1"
+        >
+          <div className="flex flex-col gap-0.5">
+            <h2 id="samples-title" className="font-display text-xl sm:text-2xl">
+              Start here: pick a sample fridge
             </h2>
-            <p className="text-xs text-muted">
-              {isLive ? "Each tap is a live run on your key" : "No key, no typing"}
+            <p className="text-sm text-muted">
+              {isLive
+                ? "Each tap is a live run on your key."
+                : "One tap, no key, no typing. You will see what is in it, then the week."}
             </p>
           </div>
-          <ul className="grid grid-cols-3 gap-2 sm:gap-4">
+          <ul className="grid gap-2.5 sm:grid-cols-3 sm:gap-4">
             {SAMPLES.map((sample) => {
               const active = loading === sample.id;
               return (
@@ -90,16 +100,18 @@ export function FridgeStep({
                     disabled={busy}
                     onClick={() => onSample(sample.id)}
                     aria-describedby={`${sample.id}-hint`}
-                    className="group flex h-full w-full flex-col overflow-hidden rounded-lg border border-border bg-surface text-left transition-colors hover:border-accent disabled:cursor-wait"
+                    className={`group flex h-full w-full items-center gap-3 rounded-lg border bg-surface p-2 text-left transition-colors hover:border-accent disabled:cursor-wait sm:flex-col sm:items-stretch sm:gap-0 sm:overflow-hidden sm:p-0 ${
+                      active ? "border-accent" : "border-border"
+                    } ${busy && !active ? "opacity-60" : ""}`}
                   >
-                    <span className="relative block aspect-[4/5] w-full overflow-hidden bg-sunk">
+                    <span className="relative block aspect-[4/5] w-16 shrink-0 overflow-hidden rounded-md bg-sunk sm:w-full sm:rounded-none">
                       {/* Decorative here: the button is named by the title beside it. */}
                       <Image
                         src={sample.image}
                         alt=""
                         width={1200}
                         height={1500}
-                        sizes="(min-width: 1024px) 230px, 33vw"
+                        sizes="(min-width: 1024px) 230px, (min-width: 640px) 33vw, 64px"
                         priority
                         className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
                       />
@@ -109,30 +121,75 @@ export function FridgeStep({
                         </span>
                       )}
                     </span>
-                    <span className="flex flex-1 flex-col gap-1 p-2 sm:p-3">
-                      <span className="font-display text-[0.8125rem] leading-tight sm:text-lg">
+                    <span className="flex min-w-0 flex-1 flex-col gap-1 sm:p-3">
+                      <span className="font-display text-base leading-tight sm:text-lg">
                         {sample.title}
                       </span>
-                      <span className="hidden text-xs text-muted sm:block">{sample.blurb}</span>
-                      <span
-                        id={`${sample.id}-hint`}
-                        className="mt-auto pt-1 text-[0.625rem] leading-tight text-muted sm:text-[0.6875rem]"
-                      >
-                        {active
-                          ? "Loading..."
-                          : isLive
-                            ? "Runs live with your key"
-                            : sampleHint(flags[sample.id].scan || flags[sample.id].plan)}
+                      <span className="text-xs text-muted sm:hidden">{sample.short}</span>
+                      <span className="hidden text-xs text-muted sm:block sm:pb-2">
+                        {sample.blurb}
                       </span>
+                      <span id={`${sample.id}-hint`} className="sr-only">
+                        {isLive ? "Runs live with your key" : sampleHint(placeholderFor(sample.id))}
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="mt-auto hidden items-center justify-between gap-2 rounded-md bg-accent px-3 py-2 text-sm font-semibold text-accent-fg group-hover:opacity-90 sm:flex"
+                      >
+                        {active ? "Opening..." : "Try this fridge"}
+                        <ArrowIcon width={16} height={16} />
+                      </span>
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="inline-flex size-10 shrink-0 items-center justify-center rounded-md bg-accent text-accent-fg sm:hidden"
+                    >
+                      <ArrowIcon />
                     </span>
                   </button>
                 </li>
               );
             })}
           </ul>
-          <p className="text-xs text-muted">
-            The sample fridges are illustrations drawn for this demo, not photographs.
-          </p>
+          {loadingSample ? (
+            <p role="status" className="pulse-soft text-sm font-medium">
+              {scanNarration(originOf(isLive, placeholderFor(loadingSample)))}
+            </p>
+          ) : (
+            <p className="text-xs text-muted">
+              {isLive
+                ? "The sample fridges are drawn illustrations, not photos."
+                : samplesNote(SAMPLE_IDS.map(placeholderFor))}
+            </p>
+          )}
+        </section>
+
+        <section
+          aria-labelledby="how-title"
+          className="flex flex-col gap-3 lg:col-start-1 lg:row-start-2"
+        >
+          <h2
+            id="how-title"
+            className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-muted"
+          >
+            How it works
+          </h2>
+          <ol className="flex flex-col gap-2.5">
+            {HOW.map((item) => (
+              <li key={item.title} className="flex gap-3">
+                <span
+                  aria-hidden="true"
+                  className="inline-flex size-9 shrink-0 items-center justify-center rounded-md bg-accent-soft text-accent"
+                >
+                  <item.icon />
+                </span>
+                <span className="flex min-w-0 flex-col">
+                  <span className="text-sm font-semibold">{item.title}</span>
+                  <span className="text-sm text-muted">{item.body}</span>
+                </span>
+              </li>
+            ))}
+          </ol>
         </section>
       </div>
 
@@ -144,7 +201,7 @@ export function FridgeStep({
       >
         <div className="flex flex-col gap-1">
           <h2 id="own-title" className="font-display text-xl">
-            Or use your own fridge
+            Or use a photo of your own fridge
           </h2>
           {isLive ? (
             <p className="max-w-prose text-sm text-muted">
@@ -154,15 +211,15 @@ export function FridgeStep({
             </p>
           ) : (
             <p className="max-w-prose text-sm text-muted">
-              Reading your own photo is a real model call, so it needs an Anthropic key. The key
-              stays in your browser. The sample fridges above work without one.
+              Reading your own photo calls Claude, so it needs your Anthropic API key. The key stays
+              in your browser. The sample fridges above work without one.
             </p>
           )}
         </div>
         {loading === "photo" ? (
           <div className="flex items-center gap-3">
             <p role="status" className="pulse-soft text-sm font-medium">
-              Reading your photo...
+              {scanNarration("live")}
             </p>
             <button type="button" onClick={onCancel} className={button.secondary}>
               Cancel
@@ -209,15 +266,6 @@ export function FridgeStep({
             Add a key to use your photo
           </button>
         )}
-      </section>
-
-      <section aria-label="How it works" className="grid gap-x-8 gap-y-5 sm:grid-cols-3">
-        {FACTS.map((fact) => (
-          <div key={fact.title} className="border-t-2 border-fg pt-3">
-            <h2 className="font-display text-lg">{fact.title}</h2>
-            <p className="mt-1 text-sm text-muted">{fact.body}</p>
-          </div>
-        ))}
       </section>
     </div>
   );

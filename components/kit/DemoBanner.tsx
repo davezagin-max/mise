@@ -12,42 +12,39 @@ interface DemoBannerProps {
   aiRequired?: boolean;
 }
 
+/** A single calm line: what the visitor is seeing and how to run it for real. */
 export function DemoBanner({ placeholder = false, aiRequired = true }: DemoBannerProps) {
   const { isLive, openKeyModal } = useKey();
+  const shell =
+    "border-b border-border bg-surface px-4 py-1.5 text-center text-xs leading-5 text-muted sm:text-[0.8125rem]";
+  const link =
+    "font-medium text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent";
 
   if (isLive) {
     return (
-      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 border-b border-border bg-surface px-4 py-2 text-sm">
-        <span className="inline-flex items-center gap-2">
-          <span aria-hidden className="size-2 rounded-full bg-success" />
-          Live — calling Claude Opus 5.5 with your key.
-        </span>
-        <button type="button" onClick={openKeyModal} className="underline underline-offset-2">
+      <div className={shell}>
+        <span aria-hidden className="mr-1.5 inline-block size-2 rounded-full bg-success" />
+        Live: Claude Opus 5.5 is answering with your key.{" "}
+        <button type="button" onClick={openKeyModal} className={link}>
           Change key
         </button>
       </div>
     );
   }
 
-  const message = !aiRequired
-    ? "Everything here works without a key. Add one to turn on the Claude Opus 5.5 features."
+  const lead = !aiRequired
+    ? "Everything here works without a key."
     : placeholder
-      ? "Demo mode — showing sample output until a real Claude Opus 5.5 run is recorded. Add your key to go live."
-      : "Demo mode — replaying a recorded Claude Opus 5.5 run. Add your key to go live.";
+      ? "Demo: the AI responses here are pre-written examples."
+      : "Demo: the AI responses here are recorded Claude Opus 5.5 runs, replayed.";
 
   return (
-    <div
-      role="status"
-      className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 border-b border-border bg-surface px-4 py-2 text-sm"
-    >
-      <span>{message}</span>
-      <button
-        type="button"
-        onClick={openKeyModal}
-        className="rounded-md bg-accent px-2.5 py-1 text-xs font-medium text-accent-fg hover:opacity-90"
-      >
-        Add key
-      </button>
+    <div role="status" className={shell}>
+      {lead}{" "}
+      <button type="button" onClick={openKeyModal} className={link}>
+        Add your Anthropic API key
+      </button>{" "}
+      {aiRequired ? "to run it live." : "to turn on the Claude Opus 5.5 features."}
     </div>
   );
 }

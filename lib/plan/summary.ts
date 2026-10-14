@@ -82,7 +82,7 @@ export function summarizeChecks(plan: MealPlan, report: PlanReport, prefs: Prefs
     id: "data",
     label: "Nutrition data",
     ok: counted === total,
-    text: `${counted} of ${total} ingredient lines counted toward the macros`,
+    text: `${counted} of ${total} ingredient lines counted in the nutrition totals`,
     details:
       missing.length > 0
         ? [`Left out, so the totals are a little low: ${missing.join(", ")}.`]

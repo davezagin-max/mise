@@ -16,14 +16,15 @@ import type { ScanResult } from "@/lib/types";
 import { ConfirmStep } from "./ConfirmStep";
 import { FridgeStep, type SampleFlags } from "./FridgeStep";
 import { GroceryStep } from "./GroceryStep";
-import { Notice, button } from "./ui";
+import { CheckIcon, Notice, button } from "./ui";
 import { WeekStep } from "./WeekStep";
 
-const STEP_TEXT: Record<Step, string> = {
-  fridge: "Fridge",
-  confirm: "Confirm",
-  week: "Week",
-  groceries: "Groceries",
+/** The four steps of the journey, each with a plain hint shown on wide screens. */
+const STEP_TEXT: Record<Step, { label: string; hint: string }> = {
+  fridge: { label: "Fridge", hint: "Pick or snap one" },
+  confirm: { label: "Confirm", hint: "Check what is in it" },
+  week: { label: "Week", hint: "Seven days of meals" },
+  groceries: { label: "Groceries", hint: "Buy what is missing" },
 };
 
 interface Failure {
@@ -277,32 +278,59 @@ export function MiseApp({ flags }: { flags: SampleFlags }) {
   return (
     <>
       <nav aria-label="Steps" className="sticky top-0 z-30 border-b border-border bg-bg">
-        <ol className="mx-auto grid w-full max-w-6xl grid-cols-4 px-2 sm:px-4">
-          {STEPS.map((name) => {
+        <ol className="mx-auto grid w-full max-w-6xl grid-cols-4 gap-1 px-2 py-1.5 sm:gap-3 sm:px-4 sm:py-2">
+          {STEPS.map((name, index) => {
             const current = name === step;
             const open = canVisit(session, name);
+            const done = !current && open && index < STEPS.indexOf(step);
+            const text = STEP_TEXT[name];
             return (
-              <li key={name} className="min-w-0">
+              <li key={name} className="flex min-w-0 items-center gap-3">
                 <button
                   type="button"
                   onClick={() => go(name)}
                   disabled={!open}
                   aria-current={current ? "step" : undefined}
-                  className={`flex min-h-11 w-full items-center justify-center border-b-[3px] px-1 text-sm font-medium disabled:cursor-not-allowed disabled:text-muted/60 ${
-                    current
-                      ? "border-accent text-fg"
-                      : "border-transparent text-muted hover:text-fg"
+                  className={`group flex min-h-11 min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-md px-1 text-center disabled:cursor-not-allowed sm:flex-none sm:flex-row sm:justify-start sm:gap-2.5 sm:px-1.5 sm:text-left ${
+                    current ? "text-fg" : open ? "text-muted hover:text-fg" : "text-muted/60"
                   }`}
                 >
-                  <span className="truncate">{STEP_TEXT[name]}</span>
+                  <span
+                    aria-hidden="true"
+                    className={`num inline-flex size-5 shrink-0 items-center justify-center rounded-full text-[0.6875rem] font-semibold sm:size-7 sm:text-xs ${
+                      current
+                        ? "bg-accent text-accent-fg"
+                        : done
+                          ? "bg-accent-soft text-accent"
+                          : open
+                            ? "border border-fg/40 text-fg"
+                            : "border border-border"
+                    }`}
+                  >
+                    {done ? <CheckIcon width={14} height={14} /> : index + 1}
+                  </span>
+                  <span className="flex min-w-0 flex-col leading-tight">
+                    <span
+                      className={`truncate text-xs sm:text-sm ${current ? "font-semibold" : "font-medium"}`}
+                    >
+                      <span className="sr-only">Step {index + 1}: </span>
+                      {text.label}
+                    </span>
+                    <span className="hidden truncate text-xs font-normal text-muted lg:block">
+                      {text.hint}
+                    </span>
+                  </span>
                 </button>
+                {index < STEPS.length - 1 && (
+                  <span aria-hidden="true" className="hidden h-px flex-1 bg-border sm:block" />
+                )}
               </li>
             );
           })}
         </ol>
       </nav>
 
-      <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 sm:py-10">
+      <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 sm:py-8 lg:pt-9">
         {step === "fridge" && (
           <FridgeStep
             flags={flags}

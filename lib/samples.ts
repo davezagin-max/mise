@@ -16,6 +16,8 @@ export interface Sample {
   id: SampleId;
   title: string;
   blurb: string;
+  /** A shorter blurb for the compact cards on a phone. */
+  short: string;
   image: string;
   /** Describes the illustration for screen readers. */
   alt: string;
