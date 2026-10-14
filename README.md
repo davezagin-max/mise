@@ -1,20 +1,38 @@
 # Mise
 
-> Photograph your fridge and get a week of meals that use what you have, with macros computed from nutrition data and a grocery list for the gaps.
+> Photograph your fridge and get a week of meals that use what you already have, with the nutrition computed by code (not guessed by AI) and a grocery list for what is missing.
 
 [![CI](https://github.com/davezagin-max/mise/actions/workflows/ci.yml/badge.svg)](https://github.com/davezagin-max/mise/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Live demo](https://img.shields.io/badge/demo-live-brightgreen.svg)](https://mise.vercel.app)
+[![Live demo: coming soon](https://img.shields.io/badge/live%20demo-coming%20soon-lightgrey.svg)](#run-locally)
 
-![The week view: checks computed by code, day cards with protein bars against the target, and a recipe card with its nutrition panel](docs/hero.png)
+![Mise in use: a sample fridge is picked, its ingredient list checked, a seven-day plan opened, a recipe scaled, and the grocery list ticked off](docs/demo.gif)
 
-## Try it in 10 seconds
+_The one-click demo, no key needed: pick a sample fridge, check what is in it, get seven days of meals with the nutrition worked out by code, then a grocery list for the gaps._
 
-**[Open the live demo](https://mise.vercel.app)**: no key, no sign-up. Tap one of the three sample fridges, then **Plan my week**. Open a recipe and change the portions, raise the protein target, and tick things off the grocery list: every number updates in the browser with no request. On a phone it installs to the home screen, and a plan you already have opens with no signal.
+## What it does
 
-Demo data in this commit is hand-written sample output; `pnpm record` replaces it with real Claude Opus 5.5 runs. The app says so wherever that data appears, and the wording switches by itself once real runs are recorded. Add your own Anthropic key in the app to run it live on your own fridge photo.
+- **Reads a photo of your fridge.** Claude Opus 5.5 lists each food it can see, roughly how much there is, and how sure it is. You fix anything it got wrong.
+- **Plans seven days of meals** around your diet, cooking time, household size and protein goal, using up the food that spoils first.
+- **Works out the nutrition in code, not in the AI.** Calories, protein, carbs and fat come from a nutrition table based on USDA data. The AI is never asked for a number.
+- **Writes the grocery list:** what the week needs minus what is already in the fridge, grouped by supermarket aisle.
 
-![The whole flow: sample fridge, confirm the list, week, recipe scaling, grocery list](docs/demo.gif)
+## Try it
+
+The live demo is coming soon. Until then it runs on your own machine with no key and no sign-up (full steps in [Run locally](#run-locally)):
+
+```bash
+pnpm install
+pnpm dev   # then open http://localhost:3180
+```
+
+The animation above is the whole demo. Tap one of the three sample fridges, then **Plan my week**. Open a recipe and change the portions, raise the protein target, and tick things off the grocery list: every number updates in the browser with no request. On a phone it installs to the home screen, and a plan you already have opens with no signal.
+
+**About the demo data.** The AI responses in this commit (each fridge's ingredient list and meal plan) are hand-written examples, not real Claude runs, and the app says so on screen. `pnpm record` replaces them with real Claude Opus 5.5 runs, and the on-screen wording switches by itself. Add your own Anthropic API key in the app to run it live on a photo of your own fridge.
+
+![The week view: seven days of meals, the checks the code ran, and a recipe card with its nutrition panel](docs/hero.png)
+
+_The week view. "Checked by code" lists what the app verified itself (protein per day, diet, cooking time, food used before it spoils); the recipe card on the right scales its amounts and nutrition as you change the portions._
 
 | Dark mode                                     | Grocery list                                                                | On a phone                                                         |
 | --------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------ |

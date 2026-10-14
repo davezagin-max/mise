@@ -10,7 +10,8 @@
  *       { "name": "hero", "path": "/", "theme": "light", "viewport": "desktop",
  *         "actions": [{ "click": "text=Run" }, { "waitFor": "#result" }, { "wait": 400 }] }
  *     ],
- *     "gif": { "path": "/", "theme": "dark", "actions": [ ... ] }
+ *     "gif": { "path": "/", "theme": "dark", "actions": [ ... ],
+ *              "encode": { "fps": 12, "width": 800, "colors": 128, "dither": "bayer" } }
  *   }
  * Actions: click, fill ([selector, text]), press, hover, waitFor (selector), wait (ms), scroll (px).
  * Output goes to docs/<name>.png and docs/demo.gif. The GIF needs ffmpeg on PATH.
@@ -108,6 +109,8 @@ try {
     const video = await page.video().path();
     await context.close();
     const gif = path.join(out, "demo.gif");
+    // Optional encoder settings in screenshots.json, to keep the GIF small enough for a README.
+    const { fps = 12, width = 800, colors = 128, dither = "bayer" } = config.gif.encode ?? {};
     try {
       execFileSync(
         "ffmpeg",
@@ -116,7 +119,7 @@ try {
           "-i",
           video,
           "-vf",
-          "fps=12,scale=800:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=128[p];[b][p]paletteuse=dither=bayer",
+          `fps=${fps},scale=${width}:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=${colors}:stats_mode=diff[p];[b][p]paletteuse=dither=${dither}`,
           gif,
         ],
         { stdio: "ignore" },
