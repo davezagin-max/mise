@@ -17,6 +17,7 @@
     "presets": "node scripts/sync-presets.mjs",
     "samples": "node scripts/make-samples.mjs",
     "ui:check": "node scripts/ui-check.mjs",
+    "functional": "node scripts/functional.mjs",
     "nutrition:refresh": "node scripts/refresh-nutrition.mjs"
   },
   "dependencies": {
